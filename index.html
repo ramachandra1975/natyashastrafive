@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1170,3 +1170,1599 @@
   });
 })();
 </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rasautpatti · Kāvyotpatti · Nāṭyotpatti — Genesis, System, and the Saint-Composers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Tiro+Devanagari+Hindi&family=JetBrains+Mono:wght@400;500&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f2e7; --ink:#221c15; --ink-soft:#544a3a; --rule:#d6cbb0;
+    --accent:#7a1f14; --accent2:#8f5a2a; --panel:#ece3cd; --sci:#2f5a52; --sci-bg:#e7eee9;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Serif 4',serif;font-size:18px;line-height:1.82;}
+  .dev{font-family:'Tiro Devanagari Hindi',serif;}
+  .page{max-width:800px;margin:0 auto;padding:0 28px 120px;}
+  .topbar{background:var(--ink);color:var(--bg);}
+  .topbar .inner{max-width:800px;margin:0 auto;padding:8px 28px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;display:flex;justify-content:space-between;opacity:.85;}
+  .titleblock{padding:52px 0 26px;border-bottom:3px double var(--rule);}
+  h1.doctitle{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(30px,5vw,46px);line-height:1.14;margin:0 0 12px;}
+  .subtitle{font-size:17px;color:var(--ink-soft);font-style:italic;margin:0 0 4px;max-width:66ch;}
+  nav.toc{margin:30px 0 10px;padding:20px 24px;background:var(--panel);border:1px solid var(--rule);}
+  nav.toc .label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent2);display:block;margin-bottom:12px;}
+  nav.toc ol{margin:0;padding-left:20px;columns:2;column-gap:26px;font-size:14px;color:var(--ink-soft);}
+  nav.toc li{margin-bottom:5px;break-inside:avoid;}
+  nav.toc a{color:var(--ink-soft);text-decoration:none;border-bottom:1px dotted var(--rule);}
+  nav.toc a:hover{color:var(--accent);border-color:var(--accent);}
+  @media (max-width:600px){nav.toc ol{columns:1;}}
+  .partdivider{margin:64px 0 0;padding:18px 0 6px;border-top:4px double var(--ink);}
+  .partdivider .plabel{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;}
+  .partdivider h2.partname{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(24px,4vw,30px);margin:6px 0 0;}
+  section.tabpanel{padding:48px 0 8px;border-bottom:1px solid var(--rule);}
+  section.tabpanel:last-of-type{border-bottom:none;}
+  section.tabpanel h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(24px,3.4vw,30px);margin:0 0 22px;color:var(--ink);}
+  section.tabpanel h2 .num{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--accent2);display:block;margin-bottom:4px;letter-spacing:.08em;}
+  section.tabpanel p{margin:0 0 17px;text-align:justify;hyphens:auto;}
+  .term{font-style:italic;color:var(--accent);}
+  .devq{font-family:'Tiro Devanagari Hindi',serif;color:var(--ink);}
+  h3.subhead{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sci);margin:28px 0 13px;padding-bottom:6px;border-bottom:2px solid var(--sci);}
+  blockquote.src{margin:20px 0;padding:16px 22px;background:var(--panel);border-left:3px solid var(--accent2);font-size:15.5px;}
+  blockquote.src .devq{display:block;font-size:19px;line-height:1.8;margin-bottom:8px;}
+  blockquote.src cite{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;}
+  table.rasatab{width:100%;border-collapse:collapse;margin:20px 0;font-size:14.5px;}
+  table.rasatab th{background:var(--ink);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:8px 8px;text-align:left;}
+  table.rasatab td{padding:7px 8px;border-bottom:1px solid var(--rule);vertical-align:top;}
+  table.rasatab tr:nth-child(even) td{background:var(--panel);}
+  .tier{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;text-transform:uppercase;padding:1px 6px;border-radius:3px;display:inline-block;margin-bottom:6px;}
+  .tier-classical{background:#e3d9c2;color:var(--accent2);}
+  .tier-modern{background:var(--sci-bg);color:var(--sci);}
+  .tier-synth{background:#f0e0d8;color:var(--accent);}
+  .backtotop{display:inline-block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--sci);text-decoration:none;border-bottom:1px dotted var(--sci);}
+  .bib{padding:50px 0;border-top:2px solid var(--ink);margin-top:20px;}
+  .bib h2{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:26px;margin:0 0 18px;}
+  .bib ol{padding-left:20px;font-size:14.5px;color:var(--ink-soft);}
+  .bib li{margin-bottom:9px;}
+  .bib .primary{color:var(--ink);font-weight:600;}
+  footer.endnote{padding:40px 0 10px;text-align:center;color:var(--ink-soft);font-size:13px;}
+  footer.endnote .devq{display:block;font-size:20px;margin-bottom:8px;color:var(--accent);}
+  @media (max-width:600px){body{font-size:16.5px;} section.tabpanel p{text-align:left;hyphens:none;} .topbar .inner,.page{padding-left:16px;padding-right:16px;} table.rasatab{font-size:12.5px;}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="inner"><span>RASA · KĀVYA · NĀṬYA UTPATTI</span><span>CONTINUOUS EDITION</span></div></div>
+<div class="page" id="top">
+
+  <div class="titleblock">
+    <h1 class="doctitle">Rasautpatti, Kāvyotpatti, Nāṭyotpatti: The Genesis, Mechanics, and Lived Application of Rasa Theory from Bharata to the Saint-Composers</h1>
+    <p class="subtitle">Why rasa theory had to come into being, the four historical schools that argued out how it actually works, the full technical apparatus of vibhāva-anubhāva-sthāyibhāva, the evolution of kāvya from mahākāvya to the bhakti kṛti, and a working analysis of how Tyāgarāja, Muttusvāmi Dīkṣitar, Śyāmā Śāstri, Annamācārya, Bhadrācala Rāmadāsu, and Śaṅkarācārya each used this exact machinery.</p>
+  </div>
+
+  <nav class="toc" aria-label="Table of contents">
+    <span class="label">Contents</span>
+    <ol>
+      <li><a href="#t1">Why a theory of rasa was needed</a></li>
+      <li><a href="#t2">The rasa-sūtra as stated</a></li>
+      <li><a href="#t3">Vibhāva: cause</a></li>
+      <li><a href="#t4">Anubhāva: effect</a></li>
+      <li><a href="#t5">Sāttvika bhāva: the involuntary eight</a></li>
+      <li><a href="#t6">Vyabhicāribhāva: the transient thirty-three</a></li>
+      <li><a href="#t7">Sthāyibhāva and the navarasa table</a></li>
+      <li><a href="#t7b">Rasābhāsa: when it fails</a></li>
+      <li><a href="#t8">Bhaṭṭa Lollaṭa: utpattivāda</a></li>
+      <li><a href="#t9">Śaṅkuka: anumitivāda</a></li>
+      <li><a href="#t10">Bhaṭṭa Nāyaka: bhuktivāda and sādhāraṇīkaraṇa</a></li>
+      <li><a href="#t11">Abhinavagupta: rasa as camatkāra</a></li>
+      <li><a href="#t11b">Guṇa, rīti, alaṅkāra</a></li>
+      <li><a href="#t12">Kāvyotpatti: śoka becomes śloka</a></li>
+      <li><a href="#t13">Nāṭyotpatti: the fifth Veda</a></li>
+      <li><a href="#t14">Śravya and dṛśya kāvya</a></li>
+      <li><a href="#t15">Mahākāvya, khaṇḍakāvya, muktaka</a></li>
+      <li><a href="#t16">Gadya, campū, stotra</a></li>
+      <li><a href="#t17">From stotra to padam</a></li>
+      <li><a href="#t18">The kṛti as terminal form</a></li>
+      <li><a href="#t19">Rasa in rāga and tāla</a></li>
+      <li><a href="#t19b">Vipralambha and sambhoga</a></li>
+      <li><a href="#t20">Annamācārya: madhura bhakti</a></li>
+      <li><a href="#t21">Bhadrācala Rāmadāsu: dāsya and lived anubhāva</a></li>
+      <li><a href="#t22">Tyāgarāja: the full navarasa range</a></li>
+      <li><a href="#t23">Muttusvāmi Dīkṣitar: śānta and the Sanskrit register</a></li>
+      <li><a href="#t24">Śyāmā Śāstri: vātsalya toward the Devī</a></li>
+      <li><a href="#t25">Śaṅkarācārya: metaphor as method</a></li>
+      <li><a href="#t26">Bhoja's ekarasavāda</a></li>
+      <li><a href="#t27">Kuntaka's vakroktijīvita</a></li>
+      <li><a href="#t28">Jagannātha's Rasagaṅgādhara</a></li>
+      <li><a href="#t29">Aṅgāṅgibhāva</a></li>
+      <li><a href="#t30">Sāttvika bhāva and guṇa-traya</a></li>
+      <li><a href="#t31">Kṣemendra's aucitya theory</a></li>
+      <li><a href="#t32">Epistemic status of rasa</a></li>
+      <li><a href="#t33">Synthesis: one system, three names</a></li>
+    </ol>
+  </nav>
+
+  <div class="partdivider"><span class="plabel">Part I — Why the Theory Was Needed, and What It Actually Specifies</span><h2 class="partname">The Machinery of Rasa</h2></div>
+
+  <section class="tabpanel" id="t1">
+    <h2><span class="num">01</span>Why a Theory of Rasa Was Needed at All</h2>
+    <p>
+    A theory of rasa is not a decorative overlay added to an already-functioning dramatic and poetic practice.
+    It exists because a specific practical problem has no obvious solution without it: a play or a poem
+    reliably makes an entire hall of strangers feel the same specific emotion at the same moment, despite each
+    spectator carrying a different personal history, different actual griefs, different actual loves — and
+    the emotion produced is not the spectator's own grief or love re-triggered by association, but something
+    that arises, is savoured, and subsides cleanly within the two or three hours of the performance, leaving no
+    residue once the play ends. Bharata's tradition needed to explain three things simultaneously: how a
+    fictional, publicly known-to-be-false situation on stage produces a real felt state in a spectator; why
+    that felt state is pleasurable even when its content is grief, terror, or disgust, none of which are
+    pleasurable in ordinary life; and why the felt state is shared uniformly across a socially and
+    psychologically heterogeneous audience rather than varying idiosyncratically the way ordinary emotional
+    reaction to real events does. No existing framework available to the tradition — neither ordinary
+    psychology of emotion (bhāva as it occurs in life), nor a theory of imitation alone, nor a theory of poetic
+    ornament (alaṅkāra) alone — answers all three questions at once. Rasa theory is the specific answer
+    constructed to close exactly this gap, and its subsequent four-school history, covered in this Part, is
+    four successive attempts to locate precisely where and how the transformation from ordinary bhāva into
+    extraordinary, shared, self-limiting rasa actually takes place.
+    </p>
+    <p>
+    The problem is compounded by a further fact the tradition took seriously from the outset: rasa cannot be
+    the srota's own sthāyibhāva (dominant emotional disposition) triggered directly, because a spectator who has
+    never experienced romantic union, and one who has experienced it many times, both experience śṛṅgāra rasa
+    watching the same scene, and experience it as comparably intense and comparably pleasurable. If rasa were
+    simply the spectator's private memory reactivated, the two spectators' experiences should differ sharply in
+    both kind and intensity, since one has the relevant memory-material to draw on and the other does not. That
+    they do not differ in this way is the single empirical observation the entire apparatus that follows —
+    vibhāva, anubhāva, sāttvika bhāva, vyabhicāribhāva, sthāyibhāva, sādhāraṇīkaraṇa, camatkāra — is built to
+    account for.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t2">
+    <h2><span class="num">02</span>The Rasa-Sūtra as Stated, Word by Word</h2>
+    <p>
+    Nāṭyaśāstra chapter six states the sūtra on which the entire theory rests:
+    </p>
+    <blockquote class="src">
+      <span class="devq">विभावानुभावव्यभिचारिसंयोगाद् रसनिष्पत्तिः।</span>
+      <cite>Nāṭyaśāstra 6.31 (numbering varies by recension)</cite>
+    </blockquote>
+    <p>
+    Rasa arises (<span class="term">niṣpatti</span>, literally "accomplishment" or "cooking-to-completion," a
+    word deliberately chosen over a simpler word for "occurs," since niṣpatti carries the specific sense of a
+    process brought to ripened completion, as food is cooked) from the <span class="term">saṃyoga</span>
+    (conjunction, coming-together) of three named components: <span class="term">vibhāva</span> (the
+    situational determinants that give rise to the emotion — who and what is present, and under what
+    circumstances), <span class="term">anubhāva</span> (the deliberate, visible physical responses an actor
+    performs to communicate the emotion outward), and <span class="term">vyabhicāribhāva</span> (the transient,
+    subsidiary emotional states that colour and complicate the dominant emotion as it develops). Bharata's
+    commentators immediately note what the sūtra does not name explicitly but presupposes throughout the
+    surrounding chapter: a fourth component, <span class="term">sthāyibhāva</span>, the single dominant,
+    stable emotional disposition (rati, utsāha, śoka, and so on) that the entire conjunction is in service of
+    bringing to ripened, savourable completion. The sūtra names the three visible, constructed ingredients an
+    actor and playwright supply; sthāyibhāva is the substance those ingredients are cooking. A fifth
+    component, <span class="term">sāttvika bhāva</span>, the involuntary physical symptoms of genuine emotional
+    absorption (horripilation, tears, trembling), is treated by Bharata as a special sub-class of anubhāva
+    rather than a separate category, though later theorists, and this document following them, treat it
+    separately because its involuntary character raises questions the deliberate anubhāvas do not.
+    </p>
+    <h3 class="subhead">Tier — Classical Attested</h3>
+    <p>
+    The sūtra's grammatical construction is itself part of its content, a point developed at length in
+    companion documents on Sanskrit grammar and Bharata's use of the causal instrumental. What concerns this
+    section is only the substantive claim: rasa is not a fourth, independently supplied ingredient added
+    alongside the other three, but the name for what results when the other three are correctly combined and
+    brought to completion around an already-present sthāyibhāva. Removing any one of the three named components
+    — situating the emotion without a visible response, or producing a response with no situational cause, or
+    producing a stable dominant emotion with no transient complicating states around it — does not produce a
+    weaker rasa; the commentarial tradition is emphatic that it produces no rasa at all, only bhāva, ordinary
+    unripened emotion, which a spectator may recognize intellectually as depicted but does not experience as
+    the specific extraordinary savour rasa names.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t3">
+    <h2><span class="num">03</span>Vibhāva: The Situational Cause, Ālambana and Uddīpana</h2>
+    <p>
+    <span class="term">Vibhāva</span> is subdivided into two functionally distinct kinds. <span class="term">
+    Ālambana-vibhāva</span> (the supporting or foundational determinant) is the person or object the emotion is
+    directed toward — the beloved in śṛṅgāra, the enemy in raudra, the corpse in bībhatsa. <span class="term">
+    Uddīpana-vibhāva</span> (the excitant determinant) is everything surrounding the ālambana that intensifies
+    the emotion already directed at it without itself being the object of the emotion — moonlight, a garden in
+    bloom, a cuckoo's call in śṛṅgāra; a burning cremation ground, vultures, or a moonless night in bībhatsa or
+    bhayānaka. The distinction matters because it specifies a testable structural claim: removing the ālambana
+    removes the rasa entirely, since there is no longer an object for the emotion to attach to, while removing
+    or varying the uddīpana changes only the rasa's intensity or specific flavour, not its basic identity — the
+    same lovers under moonlight versus under an ordinary afternoon sky remain in śṛṅgāra rasa in both cases, at
+    different intensities, whereas removing one lover from the scene changes the rasa's category outright,
+    typically toward vipralambha (separation) śṛṅgāra or toward karuṇa.
+    </p>
+    <p>
+    A further distinction Abhinavagupta insists on, developed fully in the school-history sections below, is
+    that the vibhāva of dramatic art is deliberately generalized (<span class="term">sāmānya</span>) rather than
+    particular (<span class="term">viśeṣa</span>): the ālambana on stage is not "this specific historical
+    woman, Śakuntalā, whom the actor happens to be portraying," presented as a report of a real, particular
+    person's real circumstance, but a generalized romantic situation any spectator can occupy the emotional
+    position of, regardless of whether their own particular beloved resembles the actress at all. This
+    generalization is not a simplification imposed on a richer particular reality; it is, on Abhinavagupta's
+    account, the specific mechanism that makes rasa universally accessible to a heterogeneous audience rather
+    than accessible only to spectators whose particular circumstances happen to match the depicted
+    particulars — a claim examined in full in the sādhāraṇīkaraṇa discussion below.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t4">
+    <h2><span class="num">04</span>Anubhāva: The Deliberate Physical Response</h2>
+    <p>
+    <span class="term">Anubhāva</span> is the actor's consequent, deliberate physical enactment of the emotion
+    the vibhāva has situated — the glance, the gait, the specific hand gesture (<span class="term">hasta</span>)
+    and eye movement (<span class="term">dṛṣṭi</span>) catalogued exhaustively across the Nāṭyaśāstra's āṅgika
+    abhinaya chapters. The term's etymology is precise: <span class="term">anu-bhāva</span>, that which follows
+    from and makes known (<span class="term">bhāvayati</span>) the bhāva that causes it. Anubhāva is
+    deliberately controllable and trained — an actor rehearses and repeats a specific glance for śṛṅgāra until
+    it can be produced reliably on cue, night after night, which is precisely what distinguishes it from the
+    sāttvika bhāvas discussed next. Anubhāva's function in the rasa-sūtra is communicative rather than merely
+    expressive: its purpose is to make the actor's, and by extension the character's, internal state legible to
+    a spectator seated at a physical distance, under stage lighting, without access to any information beyond
+    what is visibly performed — a constraint that explains why the Nāṭyaśāstra catalogues anubhāva with such
+    granularity (thirteen head positions, thirty-six eye states, twenty-four single-hand gestures,
+    thirteen standing postures), since a communicative code intended to be legible at a distance to an audience
+    with no other access to the actor's internal state needs to be far more standardized and far more finely
+    differentiated than the comparatively loose, idiosyncratic expressive repertoire any individual naturally
+    produces in ordinary, un-staged emotional life.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t5">
+    <h2><span class="num">05</span>Sāttvika Bhāva: The Involuntary Eight</h2>
+    <p>
+    Where anubhāva is trained and deliberately produced, <span class="term">sāttvika bhāva</span> names the
+    eight involuntary physiological responses Bharata holds cannot be produced by will alone, and whose presence
+    is therefore treated as certifying that an actor's absorption in the depicted emotion has become genuine
+    rather than merely technically correct: <span class="devq">स्तम्भ</span> (stambha, paralysis/freezing),
+    <span class="devq">स्वेद</span> (sveda, sweating), <span class="devq">रोमाञ्च</span> (romāñca,
+    horripilation), <span class="devq">स्वरभेद</span> (svarabheda, voice-breaking), <span class="devq">वेपथु</span>
+    (vepathu, trembling), <span class="devq">वैवर्ण्य</span> (vaivarṇya, change of complexion/pallor),
+    <span class="devq">अश्रु</span> (aśru, tears), and <span class="devq">प्रलय</span> (pralaya, fainting/loss
+    of consciousness). The traditional position is not that these responses are literally impossible to fake —
+    a sufficiently skilled actor can produce a passable simulated tremor — but that the tradition builds its
+    pedagogy of sāttvika around the premise that a spectator can perceptually distinguish a merely technically
+    correct anubhāva from one accompanied by genuine sāttvika absorption, and that this distinction is precisely
+    what separates an adequate performance from one capable of producing full rasa-niṣpatti in the audience.
+    The eight sāttvika bhāvas therefore function within the theory as the specific, named diagnostic by which
+    "the actor is technically executing correct abhinaya" is distinguished from "the actor has actually arrived,
+    even momentarily, at the emotional state being portrayed" — a distinction with no equivalent granularity in
+    any comparably early theory of acting outside this tradition.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t6">
+    <h2><span class="num">06</span>Vyabhicāribhāva: The Transient Thirty-Three</h2>
+    <p>
+    <span class="term">Vyabhicāribhāva</span> (also called saṃcāribhāva, "that which moves along with" the
+    dominant emotion) names the thirty-three subsidiary, transient emotional states that arise, colour, and
+    subside within the span of a single scene while a single sthāyibhāva remains dominant throughout: nirveda
+    (despondency), glāni (weakness), śaṅkā (apprehension), asūyā (envy), mada (intoxication), śrama (fatigue),
+    ālasya (indolence), dainya (wretchedness), cintā (anxiety), moha (delusion), smṛti (recollection), dhṛti
+    (contentment), vrīḍā (shame), capalatā (fickleness), harṣa (joy), āvega (agitation), jaḍatā (stupor), garva
+    (pride), viṣāda (dejection), autsukya (impatience/longing), nidrā (drowsiness), apasmāra (epilepsy/
+    possession), supta (sleep), vibodha (waking), amarṣa (indignation), avahittha (dissimulation), ugratā
+    (ferocity), mati (deliberation), vyādhi (sickness), unmāda (madness), maraṇa (death), trāsa (fright), and
+    vitarka (conjecture). The functional distinction this list encodes against sthāyibhāva is durational and
+    structural rather than merely intensity-based: a sthāyibhāva persists as the governing emotional thread of
+    an entire act or entire play, absorbing and being coloured by whichever vyabhicāribhāvas arise and subside
+    within it, while no single vyabhicāribhāva persists across the whole; a scene of śṛṅgāra rasa may move
+    through harṣa, then śaṅkā, then autsukya, in sequence, while rati (the sthāyibhāva of śṛṅgāra) remains the
+    unbroken thread the entire time. The number thirty-three is not arbitrary padding; it is presented as an
+    exhaustive catalogue of every named transient state the tradition holds a dramatic scene needs, since a
+    playwright reaching for an emotional colour outside this list is, on the theory's own terms, reaching for
+    something the system does not recognize as a distinct dramatically usable state.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t7">
+    <h2><span class="num">07</span>Sthāyibhāva and the Navarasa Table</h2>
+    <p>
+    Bharata names eight sthāyibhāva-rasa pairs; śānta, and its corresponding sthāyibhāva śama, is added by
+    later theorists (the addition is already defended at length in Abhinavagupta's Abhinavabhāratī and is
+    universally accepted by the time of the developed theory), bringing the canonical count to nine —
+    the <span class="term">navarasa</span>. Each pairing also carries a conventional presiding deity and colour
+    association, catalogued for performative and iconographic use:
+    </p>
+    <table class="rasatab">
+      <tr><th>Rasa</th><th>Sthāyibhāva</th><th>Colour</th><th>Presiding deity</th><th>Core vibhāva domain</th></tr>
+      <tr><td>Śṛṅgāra</td><td>Rati (love)</td><td>Śyāma / dark blue-green</td><td>Viṣṇu</td><td>Union and separation of lovers</td></tr>
+      <tr><td>Hāsya</td><td>Hāsa (mirth)</td><td>Śveta / white</td><td>Pramatha (Śiva's attendant)</td><td>Incongruity, deformity, mimicry</td></tr>
+      <tr><td>Karuṇa</td><td>Śoka (grief)</td><td>Kapota / dove-grey</td><td>Yama</td><td>Loss, separation, calamity</td></tr>
+      <tr><td>Raudra</td><td>Krodha (anger)</td><td>Rakta / red</td><td>Rudra</td><td>Insult, betrayal, injustice</td></tr>
+      <tr><td>Vīra</td><td>Utsāha (energy/determination)</td><td>Gaura / pale gold</td><td>Indra</td><td>Combat, generosity, righteousness</td></tr>
+      <tr><td>Bhayānaka</td><td>Bhaya (fear)</td><td>Kṛṣṇa / black</td><td>Kāla</td><td>Threat, the unknown, isolation</td></tr>
+      <tr><td>Bībhatsa</td><td>Jugupsā (disgust)</td><td>Nīla / blue</td><td>Mahākāla</td><td>Decay, filth, the repugnant</td></tr>
+      <tr><td>Adbhuta</td><td>Vismaya (wonder)</td><td>Pīta / yellow</td><td>Brahmā</td><td>The marvellous, the divine, the unprecedented</td></tr>
+      <tr><td>Śānta</td><td>Śama (tranquility)</td><td>Śveta / white (pure)</td><td>Nārāyaṇa / the self</td><td>Renunciation, self-knowledge, cessation of desire</td></tr>
+    </table>
+    <p>
+    Two structural rules govern the table beyond the individual pairings. First, sthāyibhāva-rasa correspondence
+    is theorized as convertible only in one direction inside a given performance: a sthāyibhāva can ripen into
+    rasa given the correct vibhāva-anubhāva-vyabhicāribhāva conjunction, but a rasa cannot revert to being
+    merely one spectator's private bhāva without breaking the aesthetic frame entirely — which is precisely the
+    failure mode Bharata's tradition calls <span class="term">rasābhāsa</span> (a spoiled or misdirected rasa),
+    discussed further in the composer-application sections below. Second, the later Kashmiri aestheticians,
+    Abhinavagupta chief among them, hold śānta to be architecturally prior to the other eight rather than merely
+    the ninth addition to a completed list — since śama, tranquil selfhood undisturbed by any of the other eight
+    dominant emotions, is the ground state every other rasa arises from and eventually subsides back into once
+    the performance ends, giving śānta a foundational role in aesthetic theory that directly parallels its role
+    in the darśana traditions this document's companion Śāstrex Vāk series treats at length.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t7b">
+    <h2><span class="num">07·2</span>Rasābhāsa: When the Conjunction Fails</h2>
+    <p>
+    Bharata's tradition names the specific failure mode of the rasa-sūtra's mechanism <span class="term">
+    rasābhāsa</span>, "the semblance of rasa" — a case in which the vibhāva-anubhāva-vyabhicāribhāva apparatus
+    is assembled and a felt response results, but the response fails to meet one or more of the conditions Part
+    I identified as rasa theory's founding requirements, most commonly the requirement of propriety
+    (<span class="term">aucitya</span>) between the ālambana chosen and the sthāyibhāva directed at it. The
+    standard classical example is Rāvaṇa's śṛṅgāra toward Sītā in the Rāmāyaṇa itself: the situational
+    apparatus of śṛṅgāra — ālambana, uddīpana, the full vyabhicāri palette of longing and frustration — is
+    fully present in Rāvaṇa's own experience, yet the tradition holds that a spectator does not, and on
+    aucitya grounds should not, relish this as ordinary śṛṅgāra rasa, because the ālambana (another man's
+    unwilling wife) violates the propriety condition rasa's universalizing mechanism depends on: a rasa
+    experience a spectator would be ashamed to actually inhabit, rather than merely observe at the generalized
+    remove sādhāraṇīkaraṇa provides, is graded not as full rasa but as its semblance. Rasābhāsa is not a minor
+    footnote to the theory; it is the specific concept that keeps rasa theory from collapsing into a claim that
+    any emotionally arousing conjunction whatsoever counts as legitimate rasa, and it is the theoretical
+    resource later composers draw on, explicitly or implicitly, whenever they need to distinguish devotional
+    śṛṅgāra of the Annamācārya-Tyāgarāja kind from an accusation, occasionally raised by less sympathetic
+    readers, that madhura-bhakti poetry is merely erotic poetry given a devotional gloss: the tradition's answer
+    is that the ālambana (the Lord) and the aucitya of the relationship (the soul's rightful, non-illicit
+    longing for its own source) are precisely what keep madhura bhakti's śṛṅgāra from sliding into rasābhāsa,
+    where Rāvaṇa's parallel case does not meet the same aucitya condition.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <div class="partdivider"><span class="plabel">Part II — Four Schools Argue Out Where Rasa Actually Happens</span><h2 class="partname">Utpattivāda to Camatkāra</h2></div>
+
+  <section class="tabpanel" id="t8">
+    <h2><span class="num">08</span>Bhaṭṭa Lollaṭa: Utpattivāda — Rasa as Actualized in the Character</h2>
+    <p>
+    Bhaṭṭa Lollaṭa (circa ninth century, known only through fragments preserved in later commentators'
+    refutations of him, chiefly Abhinavagupta's Abhinavabhāratī) proposes the earliest surviving systematic
+    account of where rasa is located: <span class="term">utpattivāda</span>, the doctrine of production.
+    On this view, the sthāyibhāva named in the rasa-sūtra genuinely belongs, in the first instance, to the
+    character being portrayed (Rāma, say, in his rati toward Sītā) — a real, if fictional, particular emotion
+    intensified by the vibhāva-anubhāva-vyabhicāribhāva conjunction into rasa. The actor, through sustained
+    identification with the role (<span class="term">anusandhāna</span>, "thorough application" or
+    "identification"), comes to actually possess this same intensified sthāyibhāva during performance, and the
+    audience, perceiving the actor's genuinely intensified emotion, comes to share in it derivatively. Rasa, on
+    this account, is a real emotion, actually produced (utpanna), first in the character, transferred to the
+    actor through disciplined identification, and from the actor to the spectator through perception.
+    </p>
+    <p>
+    Lollaṭa's account was subjected to sustained and largely successful attack precisely because of the three
+    requirements the opening section of this Part named. If rasa is a real, actually-produced emotion, located
+    first in a fictional character and transferred by identification to an actor, then a spectator watching Rāma
+    grieve for a genuinely dead Daśaratha ought to feel actual bereavement of the specific, particular kind
+    associated with a father's death — yet spectators demonstrably do not leave the theatre in mourning, nor do
+    they attempt to console the actor playing Rāma as they would console an actually bereaved person. Lollaṭa's
+    account, in other words, explains how an emotion could be produced and transmitted, but not why the
+    transmitted emotion is experienced as pleasurable, self-limiting, and universally shared rather than as
+    ordinary grief accidentally caught by contagion from watching someone else's real distress — the specific
+    gap the next school addresses directly.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t9">
+    <h2><span class="num">09</span>Śrī Śaṅkuka: Anumitivāda — Rasa as Inferred Through Resembling Imitation</h2>
+    <p>
+    Śrī Śaṅkuka's response, <span class="term">anumitivāda</span> (the doctrine of inference), relocates rasa
+    away from any claim that a real emotion is produced anywhere in the chain, and toward a claim about how a
+    spectator cognizes a represented emotion. Śaṅkuka's central technical move is his account of the actor's
+    ontological status: the actor playing Rāma is neither identical to Rāma (the spectator knows perfectly well
+    the man on stage is an actor, not the historical or legendary Rāma), nor entirely different from Rāma in the
+    spectator's perception (if the actor were perceived as simply "a random man performing arbitrary gestures,"
+    no rasa would arise at all) — the actor is perceived as <span class="term">rāma-sadṛśa</span>, "similar to
+    Rāma," through a specific cognitive operation Śaṅkuka names using the analogy of citra-turaga-nyāya, "the
+    maxim of the painted horse": a viewer looking at a painted horse does not believe a real horse is present,
+    nor dismiss the painting as containing no horse at all, but apprehends "horse-ness" through the painting via
+    a distinct cognitive act of resemblance-apprehension, neither straightforward perception of a real horse
+    nor straightforward non-perception. Rasa, on this account, is the spectator's inferred cognition
+    (anumiti) of the sthāyibhāva as belonging to the imitated character, arrived at via the actor's skillfully
+    executed vibhāva-anubhāva combination functioning as the inferential grounds (liṅga) from which the
+    audience infers (anumāna) the underlying emotion, exactly as smoke functions as inferential grounds from
+    which fire is inferred in the standard Nyāya example.
+    </p>
+    <p>
+    Anumitivāda solves Lollaṭa's central problem — the spectator is not catching a real transmitted emotion,
+    hence no actual bereavement follows watching Rāma's grief — but generates a new and, to later critics,
+    equally serious problem: inference (anumāna) is, in every other domain Nyāya epistemology treats it, a cool,
+    intellectual, propositional cognition ("there is fire on the hill, because there is smoke"), not an
+    experience carrying felt pleasure or emotional colour at all. If rasa is simply an inferential judgment that
+    "Rāma is grieving," structurally identical to the cognition "there is fire on the hill," Śaṅkuka's account
+    fails to explain why watching a rasa-laden performance is experienced as delightful, absorbing, and
+    qualitatively unlike drawing a logical conclusion from evidence — the specific gap Bhaṭṭa Nāyaka's account
+    addresses next.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t10">
+    <h2><span class="num">10</span>Bhaṭṭa Nāyaka: Bhuktivāda and the Discovery of Sādhāraṇīkaraṇa</h2>
+    <p>
+    Bhaṭṭa Nāyaka (also known largely through Abhinavagupta's citations and refutations, since his own text is
+    lost) introduces the concept that ultimately settles the dispute, even though his own overall theory is
+    itself later revised: <span class="term">sādhāraṇīkaraṇa</span>, "generalization" or "universalization."
+    Nāyaka's account proceeds through two named operative functions of poetic language beyond the ordinary
+    denotative (abhidhā) and figurative (lakṣaṇā) functions treated in kāvya theory generally: <span
+    class="term">bhāvakatva</span> ("the power of generalizing," or "actualization-power"), by which the
+    poetic vibhāva-anubhāva-vyabhicāribhāva conjunction strips the depicted sthāyibhāva of its particular,
+    biographically specific attachments — this is not Rāma's grief for his specific, historically particular
+    father, nor any one spectator's grief for their own specific father, but grief-as-such, generalized and
+    detached from any single knower's biographical particulars — and <span class="term">bhojakatva</span> or
+    <span class="term">bhogakṛttva</span> ("the power of enabling relishing"), by which this generalized
+    sthāyibhāva, once stripped of particularity, becomes available to be tasted or relished (<span
+    class="term">bhukti</span>, hence bhuktivāda, "the doctrine of relishing") by every spectator uniformly,
+    since a generalized emotion belongs to no one spectator's particular biography more than another's and is
+    therefore equally available to all. Nāyaka reaches for a further analogy from Mīmāṃsā ritual theory to
+    describe this relishing: rasa-experience is compared to the transcendent, non-worldly delight
+    (<span class="term">alaukika-camatkāra</span>) associated with realizing a Vedic injunction's meaning
+    (<span class="term">bhāvanā</span>) — neither ordinary worldly pleasure nor mere intellectual cognition, but
+    a third, distinct category of experience.
+    </p>
+    <p>
+    This is the decisive move for the whole subsequent history of the theory, because sādhāraṇīkaraṇa directly
+    answers the empirical observation the opening section of this Part named as rasa theory's founding problem:
+    a spectator with no personal experience of romantic union and a spectator with extensive such experience
+    feel comparably intense śṛṅgāra rasa watching the identical scene, because what each is relishing is not
+    their own particular biographical memory reactivated, but a generalized rati that neither spectator's
+    particular history is more or less entitled to access than the other's. Nāyaka's own overall architecture —
+    the specific claim that bhāvakatva and bhojakatva are functions distinct from and irreducible to abhidhā,
+    lakṣaṇā, and vyañjanā — is rejected by Abhinavagupta on the grounds treated in the next section, but the
+    sādhāraṇīkaraṇa concept itself survives Nāyaka's own theory intact and becomes, in a revised form, the load-
+    bearing mechanism of Abhinavagupta's own final account.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t11">
+    <h2><span class="num">11</span>Abhinavagupta: Rasa as Camatkāra, Resolved Through Dhvani</h2>
+    <p>
+    Abhinavagupta's synthesis, developed across his Abhinavabhāratī commentary on the Nāṭyaśāstra and his
+    Locana commentary on Ānandavardhana's Dhvanyāloka, retains sādhāraṇīkaraṇa as the correct answer to how
+    a heterogeneous audience shares one experience, but relocates the mechanism producing that generalization
+    into the dhvani-theoretic apparatus this document's companion volume on Ānandavardhana treats in full:
+    rasa is not inferred (against Śaṅkuka), nor actually produced and transmitted (against Lollaṭa), nor the
+    output of two freestanding functions separate from ordinary poetic suggestion (against Nāyaka's specific
+    architecture), but is itself the supreme, terminal case of <span class="term">vyañjanā</span> — poetic
+    suggestion — operating at maximum intensity: <span class="term">rasa-dhvani</span>. Rasa is never directly
+    stated (vācya) by any dramatic or poetic text; it is entirely suggested, through the correctly assembled
+    vibhāva-anubhāva-vyabhicāribhāva conjunction, to a spectator whose sthāyibhāva is already present as a
+    latent disposition (<span class="term">vāsanā</span>) universal to all human minds, requiring only the
+    correct suggestive stimulus to be awakened into conscious relishing. Sādhāraṇīkaraṇa, on this revised
+    account, is not a separate operative power alongside abhidhā and lakṣaṇā as Nāyaka held, but simply what
+    happens automatically whenever suggestion (vyañjanā) rather than direct statement (abhidhā) is the operative
+    channel — a suggested meaning, unlike a directly stated one, is never anchored to a specific named
+    particular in the way a direct statement is, and is for that structural reason already general rather than
+    particular the moment it is grasped through suggestion rather than assertion.
+    </p>
+    <p>
+    Abhinavagupta names the resulting experience <span class="term">camatkāra</span> — a wondering, astonished
+    relishing, structurally likened, following Nāyaka's earlier Mīmāṃsā-derived analogy but developed with
+    considerably more precision, to <span class="term">brahmāsvāda-sadṛśa</span>, "resembling the tasting of
+    brahman": not identical to liberative self-knowledge, since rasa-experience is temporary and dependent on
+    external stimulus while brahmāsvāda is neither, but sharing brahmāsvāda's specific qualitative signature of
+    being a pure, undivided, self-luminous relishing untouched by the ordinary subject-object, self-other
+    fragmentation that characterizes worldly pleasure and pain alike. This is the specific philosophical payoff
+    of locating rasa in vyañjanā rather than in inference or transmission: a suggested meaning is grasped by
+    the mind (<span class="term">pratyabhijñā</span>-adjacent recognition, drawing on Abhinavagupta's own
+    Śaiva non-dual commitments developed at length elsewhere in his corpus) in a single, unmediated flash rather
+    than through the sequential subject-predicate structure that ordinary inference and ordinary perception both
+    require, and it is exactly this unmediated, flash-like quality that both distinguishes rasa from Śaṅkuka's
+    cool inferential cognition and explains its structural resemblance to non-dual self-recognition. The
+    four-school history, read end to end, is therefore not simply an accumulation of refinements arriving at a
+    finally correct answer by trial and error, but a genuine convergence: each school inherits and is forced to
+    solve the specific unresolved problem the previous school's account left open, ending in an account that
+    ties dramatic and poetic theory directly into the tradition's own most developed epistemology of
+    unmediated cognition.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t11b">
+    <h2><span class="num">11·2</span>Guṇa, Rīti, and Alaṅkāra: The Tools Beneath the Tools</h2>
+    <p>
+    Before dhvani theory reorganized poetics around suggestion, an earlier stratum of kāvyaśāstra, running
+    from Bhāmaha and Daṇḍin through Vāmana, analyzed a poem's aesthetic success through three more surface-
+    level categories that remain load-bearing throughout the later tradition, including in every composer
+    examined in Part V. <span class="term">Guṇa</span> (poetic quality or virtue) names properties of style
+    such as <span class="term">mādhurya</span> (sweetness, associated with śṛṅgāra and karuṇa, short compact
+    words and soft consonant clusters), <span class="term">ojas</span> (vigour, associated with vīra and
+    raudra, long compounds and hard consonant clusters), and <span class="term">prasāda</span> (clarity, a
+    transparency of sense regardless of subject matter). <span class="term">Rīti</span> (regional style or
+    diction) names the historically recognized compositional idioms — Vaidarbhī (associated with mādhurya and
+    compact phrasing), Gauḍī (associated with ojas and compound density), Pāñcālī (an intermediate style) —
+    each a recognizable, nameable combination of guṇas a poet could deliberately select to suit the rasa being
+    composed for. <span class="term">Alaṅkāra</span> (figuration) supplies the specific rhetorical devices —
+    <span class="term">upamā</span> (simile, an explicit comparison marked by a comparative particle),
+    <span class="term">rūpaka</span> (metaphor, identification without a comparative marker), <span
+    class="term">utprekṣā</span> (poetic fancy, imaginatively conceiving one thing as another), <span
+    class="term">vyatireka</span> (distinction, in which a compared object is asserted to exceed its standard
+    of comparison), and dozens more catalogued exhaustively by Daṇḍin, Bhāmaha, and Ānandavardhana's own
+    predecessors — through which vibhāva and uddīpana are actually rendered in words. These three categories
+    do not compete with dhvani theory's later suggestion-based reorganization; Ānandavardhana's own explicit
+    position is that guṇa, rīti, and alaṅkāra remain fully valid and necessary, but are properly subordinate
+    (aṅga) to dhvani, functioning as the surface-level craft through which suggested meaning is delivered
+    rather than as the poem's own primary aesthetic achievement. This subordination is the exact structural
+    point Śaṅkarācārya's corpus, examined in section twenty-five, depends on: Saundaryalaharī's nakha-śikha
+    description of the Devī is composed with full command of guṇa, rīti, and alaṅkāra at the surface level,
+    while its actual doctrinal payload operates one level down, at dhvani's suggested level — precisely the
+    layered relationship the earlier alaṅkāra-focused theorists' own subordination thesis predicts.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <div class="partdivider"><span class="plabel">Part III — The Two Origin Accounts</span><h2 class="partname">Kāvyotpatti and Nāṭyotpatti</h2></div>
+
+  <section class="tabpanel" id="t12">
+    <h2><span class="num">12</span>Kāvyotpatti: Śoka Becomes Śloka</h2>
+    <p>
+    The Rāmāyaṇa's own Bāla Kāṇḍa supplies the tradition's principal account of where kāvya, poetry as a
+    formal art distinct from ordinary utterance, actually originates. Vālmīki, witnessing a hunter kill one of
+    a mating pair of krauñca birds, hears the surviving bird's cry of grief and, without premeditation or
+    deliberate technical composition, produces the first metrically perfect śloka:
+    </p>
+    <blockquote class="src">
+      <span class="devq">मा निषाद प्रतिष्ठां त्वमगमः शाश्वतीः समाः।<br>यत्क्रौञ्चमिथुनादेकम् अवधीः काममोहितम्॥</span>
+      <cite>Rāmāyaṇa, Bāla Kāṇḍa, sarga 2</cite>
+    </blockquote>
+    <p>
+    The tradition's own gloss on the moment turns on a paronomasia treated as doctrinal rather than incidental
+    wordplay: <span class="term">śoka</span> (grief) becomes <span class="term">śloka</span> (verse). The
+    substantive claim embedded in the account is precise and worth separating from the poetic charm of the
+    story itself: metrical, rule-governed form is not something subsequently and deliberately applied to raw,
+    formless grief by a craftsman working after the emotional event has passed; it is what sufficiently intense
+    grief becomes, spontaneously and without deliberation, when it arises in a mind already thoroughly saturated
+    in Chandas — the metrical science this document's companion volume on Nāda-Vāk-Śāstra treats in full. The
+    account is therefore doing exactly the same explanatory work for kāvya that the rasa-sūtra does for nāṭya:
+    both locate the origin of formal aesthetic structure in a witnessed emotional event crystallizing into
+    ordered sound, rather than in a craftsman's separate, subsequent technical invention layered onto an
+    emotion that already existed complete in itself before the form arrived.
+    </p>
+    <p>
+    This has a direct consequence for how kāvyotpatti and rasautpatti relate to each other as accounts, rather
+    than remaining two unconnected origin myths standing side by side. If grief only becomes śloka in a mind
+    already saturated in metrical form, the capacity for a witnessed particular event (a hunter's arrow, a
+    single bird's cry) to crystallize into universal, generalized, shareable verse — verse any reader
+    encountering the Rāmāyaṇa for the first time can relish as karuṇa rasa without having witnessed any bird
+    being killed themselves — is already, in miniature, the same sādhāraṇīkaraṇa operation Bhaṭṭa Nāyaka and
+    Abhinavagupta later formalize at the level of dramatic theory generally. Vālmīki's krauñca-vadha verse is
+    not merely the traditional example of where kāvya began; on this reading it is the tradition's own founding
+    demonstration case of sādhāraṇīkaraṇa itself, centuries before the concept received its technical name.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t13">
+    <h2><span class="num">13</span>Nāṭyotpatti: The Fifth Veda and the Sarvavarṇika Mandate</h2>
+    <p>
+    Nāṭyaśāstra chapter one supplies nāṭya's parallel origin account, and states its own motivating problem
+    with unusual explicitness rather than leaving it implicit in a single poetic image. In an age already in
+    decline, marked by the text's own diagnosis of rising kāma (desire), lobha (greed), krodha (anger), and
+    mātsarya (envy) across the four yugas, the gods petition Brahmā for a new mode of instruction, one accessible
+    to all four varṇas without exception, including śūdras, who stood barred from direct study of the four
+    Vedas proper. Brahmā's response is the composition of a fifth Veda, the Nāṭyaveda, formed by extraction from
+    each of the existing four in turn: <span class="term">pāṭhya</span> (recited text) from the Ṛgveda,
+    <span class="term">gīta</span> (song) from the Sāmaveda, <span class="term">abhinaya</span> (enactment)
+    from the Yajurveda, and <span class="term">rasa</span> itself from the Atharvaveda — explicitly so that
+    the instruction embedded in nāṭya could reach an audience through what can be seen and felt, rather than
+    only through Sanskrit recitation competence the source Vedas structurally required and the excluded
+    audience structurally lacked.
+    </p>
+    <p>
+    This is worth reading as a genuine design specification rather than only a mythic charter, because it names
+    a precise standard nāṭya is committed to meeting: <span class="term">sarvavarṇika</span>, belonging without
+    exception to every social stratum, meaning no spectator's birth-category or formal educational access
+    should determine whether the emotional-aesthetic instruction nāṭya delivers reaches them. Read alongside
+    kāvyotpatti, the two accounts divide a single underlying claim about aesthetic origin along two different
+    axes rather than stating two unrelated theories: kāvyotpatti addresses the individual, private moment at
+    which witnessed emotion first crystallizes into structured, generalizable form inside a single composer's
+    mind; nāṭyotpatti addresses the collective, institutional problem of how that crystallized form is then
+    delivered to an audience whose access to any single register or medium of instruction cannot be assumed
+    uniform. Kāvya without nāṭya's delivery-mandate risks remaining a private crystallization accessible only to
+    readers who already share the composer's Sanskrit derivational literacy; nāṭya's sarvavarṇika mandate
+    without kāvya's krauñca-vadha mechanism would specify an accessible delivery vehicle with nothing
+    structurally proven capable of carrying genuine aesthetic weight through it. The bhakti-kīrtana tradition
+    examined later in this document is best understood as the historical point at which both requirements are
+    finally met inside a single, small-scale, non-dramatic form — a claim developed fully in the sections on
+    the kṛti below.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <div class="partdivider"><span class="plabel">Part IV — How Kāvya Evolved Toward the Bhakti Kṛti</span><h2 class="partname">From Mahākāvya to Padam</h2></div>
+
+  <section class="tabpanel" id="t14">
+    <h2><span class="num">14</span>Śravya and Dṛśya Kāvya: The Basic Division</h2>
+    <p>
+    Daṇḍin's Kāvyādarśa, the earliest surviving systematic treatise on poetics as a formal discipline distinct
+    from grammar and dramaturgy proper, establishes the foundational division kāvya theory works with
+    throughout its subsequent history: <span class="term">śravya kāvya</span> ("kāvya meant to be heard" —
+    that is, read or recited, without staged visual enactment) against <span class="term">dṛśya kāvya</span>
+    ("kāvya meant to be seen" — nāṭya proper, requiring staged bodily and visual enactment through the four
+    abhinaya channels this document's companion volume treats at length). The division is not a hierarchy in
+    which one form is a lesser or incomplete version of the other; both are held capable of producing full
+    rasa-niṣpatti, differing only in which of the sarvavarṇika mandate's access-channels each relies on —
+    śravya kāvya reaching its audience through sound and recited meaning alone, dṛśya kāvya adding the further
+    channels of visible bodily enactment, costume, and stagecraft.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t15">
+    <h2><span class="num">15</span>Mahākāvya, Khaṇḍakāvya, Muktaka: The Śravya Spectrum</h2>
+    <p>
+    Within śravya kāvya, Daṇḍin and subsequent theorists distinguish forms chiefly by scale and structural
+    completeness. <span class="term">Mahākāvya</span> (the great, sustained narrative poem — Kālidāsa's
+    Raghuvaṃśa and Kumārasambhava are the standard exemplars) is required to meet a specific, checkable set of
+    formal criteria: division into sargas (cantos), a dhīrodātta nāyaka (a noble, self-possessed hero drawn
+    from itihāsa or purāṇa rather than freely invented), inclusion of conventional descriptive set-pieces
+    (city, ocean, mountain, season, sunrise, sunset, love-union, separation, battle), and a single dominant rasa
+    (usually śṛṅgāra or vīra) sustained across the whole while other rasas appear subordinately within it.
+    <span class="term">Khaṇḍakāvya</span> ("fragment-poem") relaxes mahākāvya's scale requirement, treating a
+    single episode or a shorter continuous narrative without the full descriptive apparatus mahākāvya mandates
+    — Kālidāsa's Meghadūta, a single sustained message-poem rather than a multi-canto epic, is the standard
+    example. <span class="term">Muktaka</span> ("detached, freed") relaxes narrative continuity itself: a
+    single self-contained verse, complete in its own right and requiring no surrounding context to deliver its
+    full rasa, collected in anthologies of subhāṣita (well-said verses) rather than embedded in a continuous
+    story. The historical trajectory across these three forms is one of progressive compression — mahākāvya's
+    full descriptive and narrative apparatus is progressively stripped away across khaṇḍakāvya and muktaka,
+    leaving, at the muktaka end of the spectrum, the minimal unit capable of independently producing rasa-
+    niṣpatti without any surrounding narrative scaffold at all. This compression trajectory is the direct formal
+    ancestor of the still-further-compressed devotional lyric examined in the sections that follow.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t16">
+    <h2><span class="num">16</span>Gadya, Campū, and the Rise of Stotra</h2>
+    <p>
+    <span class="term">Gadyakāvya</span> (prose poetry, chiefly the ākhyāyikā and kathā forms, Bāṇa's
+    Kādambarī and Harṣacarita the standard exemplars) and <span class="term">campū</span> (a mixed prose-and-
+    verse form combining gadya's narrative flexibility with the metrical density verse alone can carry) extend
+    kāvya's formal range without altering the basic śravya/dṛśya division. Running alongside this narrative
+    lineage, and structurally more important for the bhakti tradition examined below, is the parallel and much
+    older lineage of <span class="term">stotra</span> and <span class="term">stava</span> — direct address and
+    praise-poetry to a deity, structurally closer to muktaka's compressed, self-contained verse-unit than to
+    mahākāvya's sustained narrative, but distinguished from ordinary muktaka by its addressee: not a generalized
+    ālambana-vibhāva in Abhinavagupta's technical sense, but the specific deity being addressed, named, and
+    praised directly, in the second person, often by the poet's own first-person voice rather than through a
+    third-person narrated character. This first-person, directly addressed structure is the specific formal
+    innovation the bhakti movement inherits and builds its entire subsequent lyric architecture upon, and it
+    marks a genuine departure from the third-person narrated ālambana-vibhāva structure mahākāvya and dṛśya
+    kāvya alike are built around: in a stotra, the poet is not depicting someone else's rati or utsāha for an
+    audience to relish at one remove through sādhāraṇīkaraṇa, but declaring their own bhakti directly to its
+    object, collapsing the distance between depicted character and addressing poet that the earlier dramatic
+    and narrative forms had structurally required.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t17">
+    <h2><span class="num">17</span>From Stotra to Padam: The Nāyaka-Nāyikā Bhāva as Doctrinal Vehicle</h2>
+    <p>
+    The specific formal step from stotra's direct praise-address toward the <span class="term">padam</span>
+    (the Telugu devotional lyric form Annamācārya's corpus is built from, examined in full below) reintroduces
+    something stotra's direct first-person address had set aside: a depicted relational situation, but now
+    with the deity cast not as the addressee of direct praise but as the nāyaka (hero/beloved) of an explicitly
+    śṛṅgāra-structured relationship, and the devotee's soul (jīva) cast as the nāyikā (heroine) — the specific
+    literary-theological structure the tradition calls <span class="term">madhura bhakti</span> or the
+    <span class="term">nāyaka-nāyikā bhāva</span>, with clear precedent in the Rādhā-Kṛṣṇa literature that
+    develops in close historical parallel. This is not a lapse from stotra's directness back into mahākāvya's
+    depicted-character distance; it is a deliberate redeployment of śṛṅgāra rasa's entire technical apparatus —
+    ālambana and uddīpana vibhāva, viraha (separation) and sambhoga (union) as the two structural poles, the
+    full vyabhicāribhāva palette of longing, jealousy, and reconciliation — toward a referent (the individual
+    soul's relationship to the divine) that ordinary śṛṅgāra kāvya was never built to address. The formal
+    payoff of this redeployment, examined at length in the Annamācārya section below, is that it lets rasa
+    theory's entire universalizing, sādhāraṇīkaraṇa-based machinery — already proven, across the school-history
+    covered in Part II, to make a generalized emotion equally available to every listener regardless of their
+    private biography — do the specific theological work of making bhakti itself, not merely romantic love,
+    universally accessible and universally relishable, exactly as the sarvavarṇika mandate originally demanded.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t18">
+    <h2><span class="num">18</span>The Kṛti as Terminal Form: Pallavi, Anupallavi, Caraṇa</h2>
+    <p>
+    The Carnatic <span class="term">kṛti</span> — the tripartite pallavi (opening refrain), anupallavi
+    (secondary section elaborating the pallavi's theme at a higher register), and caraṇa (one or more verses
+    developing the theme further, typically returning to the pallavi's melodic material) — is best read as the
+    historical point at which several previously separate lineages this Part has traced finally converge into
+    one small-scale performative unit. From muktaka, the kṛti inherits self-containment: a single kṛti, unlike
+    a mahākāvya canto, requires no surrounding narrative context to deliver full rasa-niṣpatti on its own. From
+    stotra, it inherits direct first-person address to a named deity. From the padam and the nāyaka-nāyikā
+    bhāva, it inherits, where the composer chooses to use it, the full relational and śṛṅgāra-structured
+    apparatus for expressing bhakti rather than only declarative praise. And from nāṭyotpatti's own founding
+    fifth-Veda account, it inherits — quite literally, not merely by loose analogy — the identical four-source
+    integration Brahmā's origin-composition is said to perform: pāṭhya (the kṛti's sāhitya, its composed
+    Telugu, Sanskrit, or Manipravalam text) corresponds to the recited-text source; gīta (the kṛti's
+    rāga-bound melodic setting) corresponds directly; abhinaya's role is carried, in the kṛti's typical
+    performance context of individual or small-ensemble rendering rather than staged drama, by the singer's own
+    vocal and gestural nuance (bhāva-abhivyakti) rather than full four-channel dramatic abhinaya; and rasa
+    remains rasa, now aimed in the overwhelming majority of the Carnatic kṛti repertoire at bhakti rather than
+    at the eight worldly rasas mahākāvya and dṛśya kāvya more typically deploy. The kṛti is, in this precise
+    sense, not simply "devotional music" as a separate genre standing apart from the kāvya and nāṭya theory
+    traced through this document, but the specific small-scale form in which that entire theoretical apparatus
+    — genesis account, rasa mechanics, sādhāraṇīkaraṇa, and the sarvavarṇika delivery mandate together — finds
+    its most portable and individually performable expression, requiring neither a staged dramatic production
+    nor a sustained multi-canto narrative to deliver complete rasa-niṣpatti to a single listener in a few
+    minutes of performance.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t19">
+    <h2><span class="num">19</span>Rasa in Rāga and Tāla: The Gāndharva Contribution</h2>
+    <p>
+    The kṛti's melodic and rhythmic setting is not a neutral carrier applied after the sāhitya's rasa is
+    already complete; rāga and tāla carry independent rasa-association inherited directly from the gāndharva
+    material this document's companion volume treats in full — the conventional association of specific
+    rāgas with specific emotional registers (a rāga such as Śubhapantuvarāḷi conventionally associated with
+    karuṇa and bhakti-laden pathos, a rāga such as Hamsadhvani conventionally associated with a bright,
+    invocatory adbhuta-adjacent quality suited to opening or auspicious kṛtis) functions as a further,
+    musically carried uddīpana-vibhāva operating alongside, and reinforcing, whatever uddīpana the sāhitya's
+    own imagery supplies. A composer's choice of rāga for a given kṛti is therefore best read as a rasa-
+    theoretic decision in the fullest technical sense — an uddīpana selection precisely analogous to a
+    mahākāvya poet's choice of vasantatilakā or mandākrāntā meter for a given passage, discussed in the
+    companion Chandas material — rather than as an independent musical decision made separately from, and
+    only loosely coordinated with, the text's already-complete emotional content.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t19b">
+    <h2><span class="num">19·2</span>Vipralambha and Sambhoga: The Two Faces of Śṛṅgāra</h2>
+    <p>
+    Śṛṅgāra rasa, the single most technically elaborated of the nine, is itself internally divided into two
+    structurally distinct conditions the tradition treats almost as separate compositional problems requiring
+    different vibhāva configurations: <span class="term">sambhoga-śṛṅgāra</span> (union — the ālambana
+    physically present, the vyabhicāribhāvas skewing toward harṣa, capalatā, and garva) and <span
+    class="term">vipralambha-śṛṅgāra</span> (separation — the ālambana absent, remembered, or withheld, the
+    vyabhicāribhāvas skewing toward autsukya, śaṅkā, glāni, cintā, and smṛti). The two conditions are not
+    graded, with union treated as the fuller or more complete form and separation as a lesser, deficient
+    version of it; classical theory holds vipralambha capable of a sustained intensity and length sambhoga
+    cannot match, precisely because absence, unlike presence, permits indefinite elaboration of longing without
+    the scene resolving. Kālidāsa's Meghadūta, discussed in Part IV as the standard khaṇḍakāvya exemplar, is
+    built entirely on sustained vipralambha with no sambhoga scene at all. This division is the specific
+    technical resource the entire madhura-bhakti lineage examined in Part V depends on: because the devotee's
+    ordinary condition relative to the divine is one of separation rather than constant union, vipralambha-
+    śṛṅgāra, not sambhoga, is structurally the dominant compositional mode available to Annamācārya's virahiṇī
+    padams and to Tyāgarāja's "Nagumōmu" alike, and the sustained, unresolved intensity classical theory already
+    attributes to vipralambha over sambhoga is precisely what gives devotional longing-poetry its characteristic
+    ability to be elaborated at length without the scene needing to resolve into an actual depicted union, which
+    would in most cases be theologically as well as dramaturgically premature.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <div class="partdivider"><span class="plabel">Part V — The System Applied by the Saint-Composers</span><h2 class="partname">Six Working Cases</h2></div>
+
+  <section class="tabpanel" id="t20">
+    <h2><span class="num">20</span>Annamācārya: Madhura Bhakti and the Double Register of the Padam</h2>
+    <p>
+    Annamācārya (fifteenth century, Tallapāka lineage, over twelve thousand padams reportedly composed for
+    Veṅkaṭeśvara of Tirumala) is the historical figure whose corpus most fully realizes the nāyaka-nāyikā bhāva
+    described in the previous Part. A substantial portion of his śṛṅgāra-padams describe, with full technical
+    command of ālambana and uddīpana vibhāva, a directly erotic relationship between Veṅkaṭeśvara and Padmāvatī
+    (Alamēlumaṅga) — union, adornment, playful quarrel, reconciliation — composed with the same descriptive
+    density a court poet would apply to any royal nāyaka-nāyikā pair. Read only at this literal level, these
+    padams are straightforward śṛṅgāra kāvya with a divine couple as ālambana. The doctrinal weight of
+    Annamācārya's corpus, however, sits in a second class of padams, addressed by the poet's own voice directly
+    to Veṅkaṭeśvara, in which the poet-devotee occupies the nāyikā's position himself — cast as virahiṇī
+    (the woman suffering separation), pleading, complaining, and longing for the Lord exactly as a nāyikā would
+    for an absent nāyaka. This double register is the padam form's central technical achievement: the same
+    apparatus of ālambana-vibhāva (the Lord's beauty, ornament, and specific iconographic attributes catalogued
+    with the same granularity āhārya abhinaya theory demands), uddīpana-vibhāva (season, temple ritual timing,
+    festival occasion), and the full vipralambha-śṛṅgāra vyabhicāribhāva palette (autsukya, śaṅkā, vrīḍā,
+    glāni) is redeployed from describing an external divine couple to enacting the individual devotee's own
+    interior relationship to the divine — precisely the lakṣaṇā-to-vyañjanā shift this document's companion
+    volume on dhvani theory treats as Ānandavardhana's central technical distinction, here applied at the scale
+    of an entire devotional corpus rather than a single verse.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t21">
+    <h2><span class="num">21</span>Bhadrācala Rāmadāsu: Dāsya Bhāva and the Biographically Grounded Anubhāva</h2>
+    <p>
+    Kāñcarla Gōpaṇṇa, known as Bhadrācala Rāmadāsu (seventeenth century), composed his kīrtanas to Rāma
+    predominantly in <span class="term">dāsya bhāva</span> — the devotional stance of servant to master —
+    rather than Annamācārya's madhura register, and his corpus supplies a structurally distinct test case for
+    the theory precisely because of one biographical fact the tradition holds to be historically documented
+    rather than legendary embellishment: a substantial portion of his kīrtanas were composed while imprisoned,
+    following his diversion of temple-collection revenue toward constructing the Bhadrācalam Rāma temple, and
+    address Rāma directly with the specific grievance of a devotee-servant whose master has, from the devotee's
+    own perspective, delayed rescuing him. Kīrtanas such as "Ēmani Migula" work through karuṇa-coloured dāsya —
+    reproach mixed with unwavering loyalty, structurally close to a servant's aggrieved but still-faithful
+    address to a delayed master rather than to śṛṅgāra's longing register. What Rāmadāsu's corpus adds to the
+    theoretical picture developed in this document is a genuine limit case for the ālambana-vibhāva distinction
+    drawn in section three: where Annamācārya's padams present a generalized, iconographically catalogued
+    ālambana available to sādhāraṇīkaraṇa in the fullest sense, Rāmadāsu's specific imprisonment gives several
+    of his kīrtanas an anubhāva with a real, historically particular referent behind the conventional dāsya
+    vocabulary — the poet's actual chains are, by persistent tradition, said to be the literal referent behind
+    verses that read, on their surface, as conventional devotional complaint. This does not break
+    sādhāraṇīkaraṇa for a listener without knowledge of the biography, who relishes the generalized dāsya-karuṇa
+    rasa exactly as theory predicts; but it supplies, for a listener who does know the biography, a second,
+    simultaneously available layer in which the same words carry a particular, non-generalized historical
+    weight as well — a doubling the theory's own vyañjanā apparatus readily accommodates, since suggested
+    meaning is never restricted to a single determinate content for every possible listener.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t22">
+    <h2><span class="num">22</span>Tyāgarāja: The Full Navarasa Range Inside a Single Corpus</h2>
+    <p>
+    Tyāgarāja's roughly seven-hundred-plus surviving kṛtis, together with his two operatic kīrtana works
+    (Prahlāda Bhakti Vijayaṃ and the Nauka Caritramu), are the single largest working demonstration in the
+    Carnatic tradition of the navarasa table's full range deployed for bhakti ends rather than confined to a
+    single devotional register throughout. "Endaro Mahānubhāvulu" works predominantly in a bhakti-inflected
+    adbhuta-śānta register, its ālambana-vibhāva a catalogue of the great devotees themselves rather than the
+    deity directly, its anubhāva the composer's own bowing homage stated explicitly in the text. "Nagumōmu
+    Gaṇaleni" works in vipralambha-śṛṅgāra structurally continuous with Annamācārya's madhura register — Rāma
+    cast as the withholding nāyaka whose smile the poet-nāyikā longs for — while "Kaddanuvāriki" works in a
+    register closer to raudra-inflected vīra, the poet directly and pointedly rebuking those who deny Rāma's
+    supremacy, garva and amarṣa functioning as the dominant vyabhicāribhāvas rather than the gentler autsukya
+    of the madhura kṛtis. The Prahlāda Bhakti Vijayaṃ, as a sustained kīrtana-nāṭaka rather than an isolated
+    kṛti, restores full dṛśya-kāvya narrative scope — Hiraṇyakaśipu's raudra, Prahlāda's śānta-bhakti fused
+    register, and the climactic Narasiṃha episode's bhayānaka-adbhuta fusion, all sustained across a continuous
+    narrative in the manner of a khaṇḍakāvya rather than compressed into a single self-contained kṛti. Read
+    across the corpus as a whole, Tyāgarāja's practice is best described as treating the navarasa table not as
+    a menu from which bhakti kīrtana must select only the gentler, śānta-adjacent entries, but as the complete
+    instrument bhakti composition is entitled to use in full, exactly as dṛśya-kāvya's dramatic tradition always
+    held the navarasa table applied to worldly subject matter.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t23">
+    <h2><span class="num">23</span>Muttusvāmi Dīkṣitar: Śānta Rasa and Vaikharī-Level Sanskrit Precision</h2>
+    <p>
+    Dīkṣitar's corpus stands in deliberate contrast to Tyāgarāja's on two structural axes at once. First,
+    register: Dīkṣitar's dominant rasa is overwhelmingly śānta rather than the fuller navarasa range, his
+    kṛtis characteristically slow-paced (vilamba-kāla dominant), meditative, and structured around sustained
+    contemplation of a deity's iconographic and doctrinal attributes rather than around narrative incident or
+    dramatic complaint — a register closely continuous with śānta's architecturally prior status in the
+    navarasa table discussed in section seven. Second, and more directly connected to this document's
+    companion material on Sanskrit grammar: Dīkṣitar's sāhitya is composed almost entirely in dense, technically
+    precise Sanskrit, frequently deploying compound structures (long tatpuruṣa and bahuvrīhi samāsa of the kind
+    treated at length in the companion volume's grammar sections) that pack a single kṛti line with an entire
+    catalogue of a deity's names, attributes, and doctrinal correspondences — the Kamalāmbā Navāvaraṇa kṛtis,
+    mapping the nine āvaraṇas (enclosures) of the Śrī Cakra directly onto nine successive kṛtis addressed to
+    Kamalāmbā, are the clearest single example, each kṛti's sāhitya functioning simultaneously as devotional
+    address and as a versified doctrinal exposition of Śrīvidyā cakra-symbolism precise enough to serve as a
+    teaching text in its own right. This double function — kṛti as bhakti-vehicle and kṛti as doctrinally exact
+    teaching text simultaneously — is the specific achievement Dīkṣitar's corpus adds to the theoretical picture:
+    where Annamācārya's padams redeploy śṛṅgāra's apparatus toward bhakti, Dīkṣitar's kṛtis redeploy Sanskrit's
+    own derivational precision, examined at length in this document's companion grammar volume as vaikharī's
+    domain, directly into the kṛti form, making the kṛti carry doctrinal content with the same load-bearing
+    exactness a Sanskrit śāstra treatise carries it, rather than only carrying generalized devotional feeling.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t24">
+    <h2><span class="num">24</span>Śyāmā Śāstri: Vātsalya Inverted Toward the Devī</h2>
+    <p>
+    Śyāmā Śāstri's comparatively smaller surviving corpus, concentrated overwhelmingly on Kāmākṣī and other
+    forms of the Devī, works in a bhāva the navarasa table's standard eight-plus-one list does not name
+    directly but the broader bhakti tradition recognizes as a distinct and legitimate devotional register:
+    <span class="term">vātsalya</span>, the tender protective affection ordinarily directed by a parent toward
+    a child, here directed by the devotee toward the Devī but with the customary hierarchy inverted — the
+    devotee approaches the Mother not primarily as a servant approaches a master (Rāmadāsu's dāsya) nor as a
+    lover approaches a beloved (Annamācārya's madhura), but as a child approaches a mother, dependent, trusting,
+    and permitted a specific register of complaint and cajoling a servant could not use toward a master. His
+    svarajatis, a form combining sustained melodic elaboration with devotional text more extensively than the
+    standard kṛti structure, and kṛtis such as those addressed to Kāmākṣī in the rāga Ānandabhairavi, work this
+    vātsalya register through vyabhicāribhāvas closer to a child's — dainya (helplessness), autsukya directed at
+    the mother's attention rather than a lover's presence, and a characteristic plaintive quality the tradition
+    associates specifically with his musical idiom. This bhāva's absence from Bharata's original eight-plus-
+    śānta table is itself instructive rather than a gap needing correction: vātsalya, along with several other
+    bhāvas the bhakti tradition develops (sākhya, friendship-devotion, is a further example), belongs to a
+    devotional taxonomy — most fully systematized later in the Gauḍīya Vaiṣṇava analysis of bhakti-rasa — that
+    extends Bharata's originally worldly-dramatic navarasa table into a parallel devotional register, applying
+    the identical sādhāraṇīkaraṇa and vibhāva-anubhāva-vyabhicāribhāva mechanics this document has traced
+    throughout to relational stances the original dramatic theory, built for depicting worldly human
+    relationships, had no specific occasion to name.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t25">
+    <h2><span class="num">25</span>Śaṅkarācārya: Metaphor as Doctrinal Method</h2>
+    <p>
+    Śaṅkarācārya's own poetic corpus supplies a final, structurally distinct case: a body of work in which
+    kāvya's alaṅkāra apparatus — <span class="term">upamā</span> (simile), <span class="term">rūpaka</span>
+    (metaphor proper, identification rather than comparison), and dhvani's suggestion mechanism together — is
+    deployed not primarily to produce worldly or even devotional rasa as an end in itself, but as a vehicle for
+    transmitting non-dual (advaita) doctrinal content that direct, literal statement (abhidhā) communicates only
+    awkwardly or discursively. The Saundaryalaharī works this method most elaborately: its first forty-one verses
+    (the Ānandalaharī portion) describe the Devī's form and the Śrīcakra's structure using the full descriptive
+    apparatus of śṛṅgāra-adjacent kāvya — ornament, limb-by-limb description in the conventional style of
+    nakha-śikha (toe-to-crown) description found throughout secular kāvya — redirected entirely toward Śrīvidyā
+    tantric doctrine, so that a verse describing the Devī's waist or eyes is simultaneously, at the vyañjanā
+    level, encoding a specific cakra-correspondence or a specific stage of upāsanā practice, exactly as
+    Dīkṣitar's kṛtis later encode Śrīvidyā doctrine directly into devotional sāhitya. The Nirvāṇa Ṣaṭkam works
+    the opposite method: rather than positive metaphor built up through descriptive accumulation, it proceeds
+    entirely through negation (<span class="term">neti neti</span>-structured rūpaka), a sustained sequence of
+    "I am not this, not this" claims — not mind, not intellect, not body, not caste, not fear, not doubt —
+    building toward the positive identification with pure consciousness (<span class="term">cidānanda-rūpaḥ
+    śivo'ham</span>) precisely through the accumulated weight of what has been systematically excluded, a
+    rhetorical structure alaṅkāraśāstra recognizes as a form of vyatireka (distinction-by-negation) deployed
+    here for doctrinal rather than descriptive ends. Bhaja Govindam supplies the deliberate contrast case within
+    Śaṅkarācārya's own corpus: composed in comparatively direct, non-metaphoric admonitory language addressed
+    bluntly to an old scholar absorbed in grammatical rule-mongering rather than in liberative practice, it
+    largely dispenses with dhvani's suggestive indirection in favour of straightforward upadeśa (direct
+    instruction), demonstrating within a single author's output that the tradition treats metaphor-laden
+    suggestion and direct statement as two available registers to be chosen deliberately according to the
+    specific communicative task at hand, rather than treating suggestive kāvya as invariably superior to plain
+    statement in every doctrinal context.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <div class="partdivider"><span class="plabel">Part VII — Further Schools and Deeper Mechanics</span><h2 class="partname">What the Four-School History Left Unsettled</h2></div>
+
+  <section class="tabpanel" id="t26">
+    <h2><span class="num">26</span>Bhoja Rāja's Ekarasavāda: Śṛṅgāra as the Sole Rasa</h2>
+    <p>
+    Bhoja of Dhārā (eleventh century), in the Śṛṅgāraprakāśa and the earlier Sarasvatīkaṇṭhābharaṇa, advances a
+    position that the four-school history in Part II does not accommodate at all, because it rejects the shared
+    premise every school in that history takes for granted: that rasa is a genus with nine (or eight)
+    co-equal species. Bhoja's <span class="term">ekarasavāda</span> holds that śṛṅgāra alone is rasa in the
+    full, primary sense, and that the remaining eight are not co-equal species of one genus but derivative
+    modifications of śṛṅgāra itself, arising when śṛṅgāra's underlying substrate is inflected by a specific
+    obstruction or intensification. Bhoja's argument proceeds from a redefinition of the substrate all rasa is
+    grounded in: not Bharata's eight-plus-one discrete sthāyibhāvas taken as independent psychological
+    primitives, but a single underlying <span class="term">ahaṃkāra</span> (self-regard, ego-sense, used here
+    in a technical rather than pejorative sense, closer to "the self's fundamental orientation toward its own
+    flourishing and expansion") that Bhoja holds is identical in kind across all nine conventional rasas and
+    differs only in the specific object and obstruction-pattern it takes. Raudra, on this account, is śṛṅgāra's
+    ahaṃkāra directed at an object that has injured what one loves; karuṇa is the same ahaṃkāra confronting the
+    loss of what one loves; bībhatsa is the same ahaṃkāra recoiling from what threatens what one loves; even
+    śānta, the rasa Abhinavagupta holds architecturally prior to the other eight, is on Bhoja's account not
+    prior at all but a further inflection of the identical ahaṃkāra turned toward the self's own liberation as
+    its object of attachment. Bhoja supports this reductive move with an extensive taxonomy internal to
+    śṛṅgāra itself — he subdivides it into <span class="term">śṛṅgāra</span> proper (union and separation
+    between two qualified lovers) and further specialized categories governing improper or partial attachment —
+    arguing that this internal richness is sufficient to generate, by systematic modification, everything the
+    other eight rasas separately name.
+    </p>
+    <p>
+    The force of Bhoja's position for the wider theory this document has traced is not that it displaces
+    Abhinavagupta's synthesis — subsequent alaṅkāraśāstra, including Jagannātha Paṇḍita discussed below,
+    treats ekarasavāda as a minority position rather than the settled view — but that it exposes a genuine
+    unresolved question the four-school history in Part II passes over by treating the navarasa list as a
+    fixed empirical inventory rather than a claim requiring its own justification: why nine, and why these
+    nine, rather than some other partition of the space of possible emotional dispositions into rasa-eligible
+    categories. Bhoja's reductive answer, that there is really only one rasa-eligible substrate and the
+    conventional nine are its surface variants, at minimum forces later theorists to state explicitly, rather
+    than simply assume, what principle fixes the navarasa list's boundaries and prevents either Bhoja's
+    reduction to one or an equally possible proliferation to twenty or thirty. This is also the specific
+    theoretical resource a listener could invoke to explain why devotional composition returns so
+    persistently, across Annamācārya's, Tyāgarāja's, and the wider bhakti-kīrtana corpus, to śṛṅgāra's
+    apparatus even when the ostensible content is bhakti rather than romantic love examined in the ordinary
+    sense: on Bhoja's account this is not merely a contingent literary preference among composers but a direct
+    consequence of śṛṅgāra occupying a structurally privileged, generative position relative to every other
+    rasa a composer might otherwise reach for.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t27">
+    <h2><span class="num">27</span>Kuntaka's Vakroktijīvita: Obliquity as a Rival Unifying Principle</h2>
+    <p>
+    Kuntaka, a near-contemporary of Abhinavagupta writing from within the same broader Kashmiri milieu,
+    proposes in the Vakroktijīvita a unifying principle for poetic excellence that neither reduces to
+    dhvani's suggestion-based architecture nor to the older guṇa-rīti-alaṅkāra apparatus Part II·2 surveys,
+    but competes directly with dhvani for the position of poetry's single defining criterion: <span
+    class="term">vakrokti</span>, "oblique" or "deviant" expression, meaning any manner of saying a thing that
+    departs, through the poet's own <span class="term">kavi-vyāpāra</span> (creative agency, or "poetic
+    skill-in-action"), from the plain, unremarkable way the same content could otherwise have been stated.
+    Kuntaka catalogues vakrokti across six distinct levels of linguistic organization at which this deviation
+    can occur — <span class="term">varṇa-vakratā</span> (obliquity at the level of individual phoneme choice
+    and sound-patterning), <span class="term">pada-pūrvārdha-vakratā</span> and <span class="term">
+    pada-parārdha-vakratā</span> (obliquity in a word's root-selection and its suffixation respectively),
+    <span class="term">vākya-vakratā</span> (obliquity at the level of the full sentence's construction),
+    <span class="term">prakaraṇa-vakratā</span> (obliquity in how an episode within a larger work is handled),
+    and <span class="term">prabandha-vakratā</span> (obliquity at the level of the entire composition's overall
+    design) — arguing that genuine poetic excellence is identifiable, at any and every one of these six levels
+    simultaneously, by the presence of a departure from the plainest available expression that is nonetheless
+    not arbitrary distortion but a deliberate, skill-bearing choice a discerning reader recognizes as more
+    striking, more apt, or more delightful than the unmarked alternative would have been.
+    </p>
+    <p>
+    Kuntaka's explicit target is dhvani theory's claim that suggestion (vyañjanā) is poetry's single defining
+    operation, with everything else, including the guṇa-rīti-alaṅkāra apparatus, properly subordinate to it;
+    Kuntaka's counter-claim is that vakrokti, not vyañjanā, is the genuinely unifying principle, since a
+    directly stated (vācya) sentence can itself already be markedly, strikingly oblique in its diction or
+    construction without carrying any additional suggested sense beyond what is stated, and Kuntaka holds such
+    sentences are still recognizably good poetry on grounds dhvani theory alone does not capture. The
+    historical resolution, reached by later theorists rather than by either school conceding outright, treats
+    vakrokti and dhvani as operating at different levels rather than as strict competitors: vakrokti describes
+    the expressive texture through which content, whether directly stated or suggested, is rendered
+    strikingly rather than flatly, while dhvani describes what content, stated or suggested, is actually being
+    communicated — meaning a poet's choice of vakrokti at Kuntaka's six levels is properly one further resource,
+    alongside the guṇa-rīti-alaṅkāra apparatus already discussed, for delivering the dhvani-level suggested
+    meaning with maximal aesthetic force, rather than a genuinely rival account of what poetic excellence
+    ultimately consists in. This resolution is directly visible in Dīkṣitar's compound-dense Sanskrit examined
+    in Part V: his characteristic samāsa constructions are simultaneously vakrokti at Kuntaka's pada- and
+    vākya-levels (a strikingly compressed, non-obvious way of saying what a plainer sentence could have said)
+    and the vehicle for dhvani-level suggested doctrinal content, the two operating jointly rather than in
+    competition within a single kṛti line.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t28">
+    <h2><span class="num">28</span>Jagannātha Paṇḍita's Rasagaṅgādhara: Ramaṇīyatā and the Final Systematization</h2>
+    <p>
+    Jagannātha Paṇḍita (seventeenth century, Mughal court), the last major systematic theorist in the classical
+    alaṅkāraśāstra lineage, opens the Rasagaṅgādhara by replacing the definition of kāvya every prior theorist
+    from Bhāmaha onward had worked with some variant of — kāvya as śabda and artha bound by guṇa, alaṅkāra, and
+    an absence of doṣa (fault) — with a single, deliberately more economical criterion: <span class="term">
+    ramaṇīyārthapratipādakaḥ śabdaḥ kāvyam</span>, "kāvya is that language which conveys a delightful
+    (ramaṇīya) sense." Jagannātha's stated reason for this replacement is that every earlier list-based
+    definition (requiring guṇa, requiring alaṅkāra, requiring absence of doṣa as separately checked conditions)
+    both admits counterexamples — verses lacking a formally catalogued alaṅkāra that are nonetheless
+    universally regarded as excellent poetry — and fails to explain why the presence of the listed properties
+    matters in the first place, whereas defining kāvya directly by the delight (ramaṇīyatā, closely allied to
+    but not simply identical with Abhinavagupta's camatkāra) its sense produces in a qualified reader (<span
+    class="term">sahṛdaya</span>, "one whose heart is attuned") both handles the counterexamples and states the
+    actual underlying criterion the older list-based properties were only ever imperfect proxies for. Jagannātha
+    devotes extensive sections to defending this definition against objections from the entire prior tradition,
+    arguing point by point that guṇa, alaṅkāra, and absence of doṣa are neither necessary nor sufficient
+    conditions for ramaṇīyatā taken individually, but are typically, though not invariably, present together in
+    cases where ramaṇīyatā is achieved, which is why the earlier tradition mistook a frequent correlate for the
+    defining criterion itself.
+    </p>
+    <p>
+    Jagannātha's treatment of rasa proper largely accepts Abhinavagupta's camatkāra-based account inherited
+    through the Dhvanyāloka-Locana lineage, but sharpens one specific point the earlier schools left
+    comparatively loose: the precise relationship between śābdabodha (ordinary verbal cognition of a
+    sentence's literal sense) and rasa-camatkāra's arising. Jagannātha argues that rasa cognition, while
+    dependent on and arising immediately consequent to śābdabodha, is not itself a species of śābdabodha at
+    all, since śābdabodha is propositional in structure (subject, predicate, relation) in a way rasa-camatkāra,
+    on the school's shared commitment inherited from Abhinavagupta's account of unmediated suggestion, is not.
+    This sharpening matters directly for how a sahṛdaya-reader is expected to engage a text like the Kamalāmbā
+    Navāvaraṇa kṛtis examined in Part V: Jagannātha's framework predicts, correctly on the internal logic of the
+    theory, that a listener can fully grasp Dīkṣitar's dense Sanskrit śābdabodha — parsing every samāsa
+    correctly, following every doctrinal cross-reference to the Śrīcakra's āvaraṇas — while still not
+    experiencing rasa-camatkāra at all, if the further, non-propositional condition of sahṛdayatā and aucitya-
+    governed reception is absent; conversely, a listener with comparatively less technical command of the
+    Sanskrit but a rightly prepared sahṛdaya disposition may experience camatkāra a more technically expert but
+    less rasika listener does not, since on Jagannātha's account the two cognitions, propositional understanding
+    and rasa-relishing, are related but genuinely distinct achievements.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t29">
+    <h2><span class="num">29</span>Aṅgāṅgibhāva: Principal and Subordinate Rasa Within a Single Work</h2>
+    <p>
+    No sustained kāvya or nāṭya work, once it extends beyond muktaka's single self-contained verse, confines
+    itself to a single rasa throughout its full length, and the theory accordingly requires a mechanism
+    governing how multiple rasas coexist within one composition without producing an incoherent, directionless
+    aesthetic experience. The governing concept is <span class="term">aṅgāṅgibhāva</span>, the relation of
+    subordinate part (<span class="term">aṅga</span>) to principal whole (<span class="term">aṅgin</span>):
+    a sustained work is held to a single dominant rasa (<span class="term">aṅgi-rasa</span>) that governs the
+    composition's overall aesthetic direction and toward which every other rasa appearing within it is
+    subordinated, functioning either to intensify the dominant rasa by contrast (raudra intensifying vīra in a
+    battle narrative whose overall aṅgi-rasa is vīra) or to provide necessary narrative variation without
+    displacing the aṅgi-rasa's ultimate governance (a comic, hāsya-toned subplot subordinated to an aṅgi-rasa
+    of śṛṅgāra in a romantic mahākāvya). The specific rule this relation is subject to, stated explicitly by
+    Viśvanātha in the Sāhityadarpaṇa and widely accepted subsequently, is that a subordinate rasa may appear
+    with its full technical apparatus of vibhāva, anubhāva, and vyabhicāribhāva intact, but must not be allowed
+    to reach the same degree of sustained elaboration and climactic emphasis the aṅgi-rasa itself receives,
+    since a subordinate rasa elaborated to equal or greater length than the governing rasa would, on the
+    theory's own terms, effectively become a second aṅgi-rasa competing with the first, producing the
+    directionless, incoherent effect the aṅgāṅgibhāva rule exists specifically to prevent.
+    </p>
+    <p>
+    Tyāgarāja's Prahlāda Bhakti Vijayaṃ, examined in Part V as a sustained kīrtana-nāṭaka rather than an
+    isolated kṛti, is a direct working instance of this rule rather than merely an incidental case of rasa
+    variety: its aṅgi-rasa is bhakti-inflected śānta, sustained across the entire work through Prahlāda's own
+    unwavering devotion regardless of the surrounding narrative's shifting content, while Hiraṇyakaśipu's
+    raudra and the Narasiṃha episode's bhayānaka-adbhuta fusion, however vividly elaborated in their own scenes,
+    remain subordinated aṅga-rasas whose specific dramaturgical function is to intensify, by direct contrast, a
+    listener's relishing of Prahlāda's śānta-bhakti once the narrative returns to it — the raudra and bhayānaka
+    episodes exist, on this reading, not as independent aesthetic destinations in their own right but as
+    structurally necessary contrast-material subordinated to the work's single governing rasa, exactly as
+    Viśvanātha's aṅgāṅgibhāva rule specifies must be the case in any well-formed sustained composition.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t30">
+    <h2><span class="num">30</span>Sāttvika Bhāva and the Sāṃkhya Guṇa-Traya: Why "Sattva" Names the Involuntary</h2>
+    <p>
+    The term <span class="term">sāttvika</span>, applied in section five to the eight involuntary
+    physiological responses (stambha, sveda, romāñca, svarabheda, vepathu, vaivarṇya, aśru, pralaya), is not a
+    free-standing coinage but a direct technical borrowing from Sāṃkhya's guṇa-traya, the three constituent
+    strands — <span class="term">sattva</span> (lucidity, transparency, the capacity to reveal), <span
+    class="term">rajas</span> (activity, agitation, the capacity to move), and <span class="term">tamas</span>
+    (inertia, concealment, the capacity to obstruct) — that Sāṃkhya holds combine in every configuration of
+    prakṛti, including the psycho-physical apparatus (antaḥkaraṇa) through which any experience whatsoever is
+    registered. The specific reason Bharata's tradition names these eight responses sāttvika rather than, for
+    instance, rājasa or tāmasa is that sattva's defining Sāṃkhya function is precisely revelatory transparency —
+    sattva is the guṇa through which the antaḥkaraṇa becomes a clear, undistorting medium capable of registering
+    and manifesting an internal state rather than obstructing or agitating its expression — and the eight
+    sāttvika bhāvas are exactly the bodily responses the tradition holds cannot be produced by deliberate,
+    effortful will (which would implicate rajas, the guṇa of directed activity) but arise only when the mind's
+    sattva-component is sufficiently dominant and unobstructed to let an actual, fully absorbed internal state
+    show through the body directly, without the mediating distortion ordinary deliberate action introduces.
+    This is the specific philosophical grounding behind the diagnostic function assigned to sāttvika bhāva in
+    section five: an actor whose sāttvika responses appear is, on this account, not merely performing well but
+    is in a psycho-physical condition in which sattva has, at least momentarily, achieved sufficient dominance
+    over rajas and tamas for the portrayed emotion to manifest with the same unobstructed transparency Sāṃkhya
+    attributes to sattva generally, which is exactly why the tradition treats these eight responses, and not
+    any deliberately produced anubhāva, as certifying genuine rather than merely technical absorption.
+    </p>
+    <p>
+    This grounding also explains a specific detail of the sāttvika list's own internal structure that would
+    otherwise look arbitrary: the list includes responses associated with sthāyibhāvas across the full
+    emotional register, from joy-adjacent romāñca to grief-adjacent aśru to terror-adjacent stambha and
+    vaivarṇya, rather than being restricted to sattva-associated positive emotional states alone. This is
+    consistent with Sāṃkhya's own position that sattva is a formal, content-neutral capacity for revelation
+    and clarity, not itself a positive emotional valence — sattva reveals whatever content is present in the
+    antaḥkaraṇa at a given moment, whether that content is rati, śoka, bhaya, or krodha, with equal
+    transparency, which is precisely why sāttvika bhāva theory holds that all nine rasas, not only the more
+    conventionally pleasant ones, are equally capable of producing the full eight-fold involuntary response set
+    in a sufficiently absorbed actor, a claim directly consistent with the sāṃkhya-guṇa architecture the term
+    sāttvika is borrowed from and would be considerably harder to motivate without that borrowing made explicit.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t31">
+    <h2><span class="num">31</span>Kṣemendra's Aucityavicāracarcā: Propriety as the Unifying Criterion Across Every Element</h2>
+    <p>
+    Kṣemendra (eleventh century, Kashmir), in the Aucityavicāracarcā, proposes a criterion that section 7·2's
+    treatment of rasābhāsa already invokes locally but that Kṣemendra elevates into a fully general theory
+    covering every dimension of poetic composition, not the ālambana-sthāyibhāva relation alone: <span
+    class="term">aucitya</span>, propriety or fittingness, understood as the requirement that every
+    compositional element — word choice, meter, alaṅkāra, characterization, and the vibhāva-anubhāva-
+    vyabhicāribhāva conjunction itself — be fitted precisely to every other element and to the work's overall
+    rasa, with any single element out of proportion or out of keeping with its surroundings sufficient to spoil
+    (produce ābhāsa in) an otherwise correctly assembled composition regardless of how excellent each individual
+    element is when considered in isolation. Kṣemendra's specific and influential thesis is that aucitya, not
+    guṇa, alaṅkāra, or even rasa taken as an independently sufficient criterion, is the single property whose
+    presence or absence actually determines whether a work succeeds or fails as poetry, on the grounds that a
+    work can possess excellent guṇa, skillfully deployed alaṅkāra, and a technically correct rasa-conjunction at
+    the level of each individual component, and still fail as a whole if the components are not properly fitted
+    to one another — an ill-fitted excess of ojas-guṇa in a tender vipralambha-śṛṅgāra passage, for instance,
+    or an alaṅkāra correctly executed by the rules governing that specific figure but jarringly out of register
+    with the surrounding rasa, both count on Kṣemendra's account as aucitya-failures capable of spoiling the
+    passage even though no individual rule of guṇa, alaṅkāra, or vibhāva-anubhāva construction has been
+    technically violated.
+    </p>
+    <p>
+    Kṣemendra catalogues aucitya's application across more than two dozen distinct compositional dimensions —
+    propriety of word to meaning, of meter to rasa, of ornament to context, of a character's speech to that
+    character's social station and situation (a direct convergence with the register-assignment material this
+    document's companion volume treats under Bharata's sarvavarṇika dramaturgy), of description to narrative
+    pace, and, closest to the concerns of this Part, of vibhāva and vyabhicāribhāva selection to the specific
+    sthāyibhāva being elaborated. This last application is the specific resource behind the propriety-based
+    resolution of rasābhāsa developed in section 7·2: Rāvaṇa's śṛṅgāra fails not because śṛṅgāra's formal
+    apparatus is technically misassembled, but, on Kṣemendra's more general criterion, because the ālambana
+    selected is improper (anaucitya) relative to the ethical and dramaturgical context the epic as a whole
+    establishes, exactly the kind of whole-composition fittingness-failure Kṣemendra's theory names as the
+    single most general diagnostic available across all of kāvyaśāstra, applicable equally to a single misplaced
+    epithet and to an entire misjudged emotional register.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t32">
+    <h2><span class="num">32</span>The Epistemic Status of Rasa-Cognition: Pratyakṣa, Anumāna, or a Sui Generis Pramāṇa</h2>
+    <p>
+    A question left implicit throughout the four-school history of Part II, but treated with explicit
+    technical care by Abhinavagupta and his successors, is how rasa-cognition should be classified within the
+    standard pramāṇa taxonomy (pratyakṣa, perception; anumāna, inference; śabda, verbal testimony; and the
+    further pramāṇas variously admitted by different darśanas) that the wider Indian philosophical tradition
+    uses to classify every other form of valid cognition. Śaṅkuka's anumitivāda, examined in section nine,
+    is precisely the position that rasa-cognition is a species of anumāna, and its rejection on the specific
+    grounds that inference is propositional and affectively neutral in a way rasa-experience demonstrably is
+    not, already implies rasa-cognition cannot simply be filed under an existing pramāṇa without remainder.
+    Abhinavagupta's own position, developed most explicitly in his treatment of camatkāra's precise temporal
+    structure, holds that rasa-cognition fails to meet the defining criteria of pratyakṣa as well: ordinary
+    sensory perception is held, across virtually every Indian epistemological school, to register a determinate
+    external object standing apart from the perceiving subject, whereas camatkāra's own defining phenomenal
+    character, on Abhinavagupta's repeated insistence, is precisely the momentary dissolution of the ordinary
+    subject-object distinction perception otherwise requires, the same structural feature that motivates his
+    comparison of rasa-experience to brahmāsvāda discussed in section eleven. Rasa-cognition is therefore argued
+    to require its own distinct classification, generally glossed in the later tradition as <span class="term">
+    alaukika-pratyakṣa</span> ("extraordinary perception," borrowing and repurposing a category Nyāya itself
+    uses for other specialized cases such as yogic perception) or left as an explicitly sui generis category
+    the standard pramāṇa list was never built to accommodate, since it was built to classify cognitions of an
+    external world the perceiving subject remains distinct from throughout, not cognitions whose defining
+    achievement is the temporary suspension of exactly that distinctness.
+    </p>
+    <p>
+    The specific technical dispute this classification question generates concerns <span class="term">
+    yaugapadya</span>, simultaneity: does rasa-camatkāra arise instantaneously, in a single undivided moment,
+    once the vibhāva-anubhāva-vyabhicāribhāva conjunction is complete, or does it arise sequentially, building
+    incrementally as each vyabhicāribhāva is registered in turn across the unfolding scene. Abhinavagupta's
+    considered position holds that camatkāra itself, the culminating relishing, is strictly instantaneous and
+    undivided when it occurs — consistent with its structural resemblance to non-dual recognition, which by
+    definition admits no internal sequence — while the vibhāva-anubhāva-vyabhicāribhāva material that occasions
+    it is necessarily sequential, since a dramatic scene unfolds in real time and no single instant contains the
+    entire vyabhicāribhāva sequence a sthāyibhāva passes through on its way to ripened rasa. The relationship
+    between the two is therefore not itself sequential in the ordinary causal sense of one discrete event
+    producing a second discrete event some interval later, but is better described, on Abhinavagupta's own
+    preferred formulation, as the sequential material serving as the occasion (nimitta) for an instantaneous
+    recognition that, once it occurs, occurs all at once rather than building up in degrees proportional to how
+    much of the preceding sequential material has been registered — which is the specific technical reason
+    later theorists resist describing rasa-experience as growing gradually more intense across a performance in
+    the way ordinary sensory stimulation intensifies with exposure, holding instead that what changes across a
+    performance is the accumulating sequential material, while camatkāra itself, whenever and however many
+    times it occurs within that performance, is each time a complete, undivided event rather than a partial
+    installment of a larger cumulative one.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <div class="partdivider"><span class="plabel">Part VIII — The Evolution of Svara Notation and Its Transfer into Kāvya, Nāṭya, and the Karaṇas</span><h2 class="partname">From Vedic Accent to the 108 Karaṇas</h2></div>
+
+  <section class="tabpanel" id="t33">
+    <h2><span class="num">33</span>The Vedic Origin: Three Tones Before Seven</h2>
+    <p>
+    The sapta svara did not begin as seven notes. Samagāna, the melodic rendering of the Sāmaveda, is built
+    on a system that precedes the seven-note scale by a considerable historical distance and operates instead
+    on a three-tone accentual base already familiar from ordinary Vedic recitation: <span class="term">
+    udātta</span> (raised pitch), <span class="term">anudātta</span> (unraised, lower pitch), and <span
+    class="term">svarita</span> (a falling compound pitch, traditionally analyzed as udātta immediately
+    followed by anudātta within a single syllable, and further subdivided by later phoneticians into <span
+    class="term">jātya-svarita</span>, <span class="term">kṣaipra-svarita</span>, and other refined
+    varieties). This three-tone system is not itself musical in the sense the developed rāga tradition later
+    understands music; it is a pitch-accent system governing correct Vedic recitation, whose misplacement, as
+    the indraśatru case discussed in this document's companion Śikṣā material shows, could invert a mantra's
+    meaning outright. Samagāna's specific historical contribution is the discovery that this three-tone
+    accentual base, when stretched, ornamented, and given sustained melodic extension for chanting rather than
+    spoken recitation, naturally differentiates into a larger number of distinguishable pitch-levels — the
+    Sāmavidhāna Brāhmaṇa and the later Nāradīya Śikṣā both describe a progressive expansion from the three
+    Ṛgvedic accents toward a seven-level melodic scale used specifically in sāman chanting, traditionally
+    named not sa-ri-ga-ma-pa-dha-ni but numerically, as the first (prathama), second (dvitīya), and so on
+    down to the seventh svara, counted in a descending rather than ascending order from the udātta-associated
+    highest pitch. This numerical, non-onomatopoetic naming convention is itself evidence that the seven-note
+    system originates as a direct, incremental refinement of the three-tone accentual system rather than as an
+    independently invented musical scale later retrofitted onto Vedic chant; the names come later, once the
+    system is repurposed for gāndharva (secular and theatrical) music, and are treated in the following section.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t34">
+    <h2><span class="num">34</span>The Nāradīya Śikṣā's Physiological Account: Nābhi to Śiras</h2>
+    <p>
+    The Nāradīya Śikṣā, the specific Śikṣā text most concerned with sāman-chanting technique rather than
+    Ṛgvedic recitation alone, supplies the tradition's foundational physiological account of where the seven
+    svaras are produced in the body, an account the later gāndharva and nāṭya material inherits wholesale
+    rather than re-deriving independently. The text locates the origin of breath-driven sound
+    (<span class="term">prāṇa</span>-borne <span class="term">nāda</span>) at the <span class="term">
+    nābhi</span> (navel), from which breath rises through the <span class="term">hṛdaya</span> (heart/chest
+    region), the <span class="term">kaṇṭha</span> (throat), the <span class="term">śiras</span> (head), and
+    is finally shaped into differentiated pitch at the point of articulation in the mouth
+    (<span class="term">mukha</span>) — a four-stage vertical model of sound-production the tradition treats
+    as continuous with, rather than separate from, Śikṣā's general treatment of sthāna (place of articulation)
+    for phoneme production discussed in this document's companion grammar volume. The specific technical claim
+    this model supports is that svara-sthāna, the location assigned to each of the seven notes, is not an
+    arbitrary convention fixed by an authority's decree but a mapping of each note onto a specific point along
+    this vertical breath-path, with lower svaras (the numerically later, lower-pitched sāman tones) associated
+    with sound generated closer to the nābhi and higher svaras associated with sound generated and resonated
+    closer to the śiras — the same vertical logic later gāndharva theory inherits when it assigns each of the
+    seven classical svaras a specific bodily point of resonance and a specific animal-cry association, treated
+    in the section that follows.
+    </p>
+    <p>
+    This physiological grounding is what licenses the tradition's insistence, discussed in this document's
+    companion volume on Śikṣā's three axes, that svara is not merely an abstract musical value comparable to a
+    pitch on a modern staff but a psycho-physical event with a determinate location and generative mechanism in
+    the reciter's own body — a claim with direct pedagogical consequence, since it implies correct svara
+    production is trained by cultivating the breath's correct rise through the four named stations rather than
+    by imitating a target pitch from the throat or mouth alone, without engaging the deeper nābhi-and-hṛdaya
+    breath-support the Nāradīya Śikṣā holds is the actual origin-point of the sound being shaped.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t35">
+    <h2><span class="num">35</span>Naming the Seven: Ṣaḍja, Ṛṣabha, and the Animal-Cry Etymologies</h2>
+    <p>
+    The seven classical svara names — <span class="devq">षड्ज, ऋषभ, गान्धार, मध्यम, पञ्चम, धैवत, निषाद</span>
+    (ṣaḍja, ṛṣabha, gāndhāra, madhyama, pañcama, dhaivata, niṣāda) — replace Samagāna's numerical counting
+    once the system is adopted into gāndharva theory, and each name carries an etymology the tradition holds to
+    be motivated rather than arbitrary, in keeping with the derivational transparency this document's companion
+    grammar volume treats as a general feature of Sanskrit technical vocabulary. <span class="term">Ṣaḍja</span>
+    ("born of six") is traditionally explained as the note produced by the simultaneous coordinated action of
+    six sound-sources — variously enumerated across sources as the nose, throat, chest (uras), palate, tongue,
+    and teeth — making it, on this account, the foundational note from which the others are subsequently
+    derived rather than one note among seven co-equal peers, a status directly parallel to sattva's
+    foundational role among the three guṇas discussed elsewhere in this document. <span class="term">
+    Ṛṣabha</span> ("bull") and the remaining five names are explained through the specific animal or natural
+    sound each note's characteristic timbre was traditionally held to resemble: ṛṣabha to a bull's bellow,
+    gāndhāra to a goat's bleat, madhyama to a heron's or krauñca-bird's cry (a detail worth noting alongside
+    the krauñca-vadha origin of kāvya discussed elsewhere in this document, though the tradition does not treat
+    the two krauñca references as directly connected), pañcama to a cuckoo's call, dhaivata to a horse's
+    neigh, and niṣāda to an elephant's trumpet. This animal-cry etymological layer is presented by the
+    tradition not as fanciful decoration but as a genuine mnemonic and pedagogical device: a student learning to
+    produce a given svara's correct timbre by ear, prior to any formal instrumental reference pitch being
+    available, is instructed to reproduce the specific quality of the named animal's cry as the practical target,
+    making the etymology functionally load-bearing in oral pedagogy rather than merely decorative nomenclature
+    layered on afterward.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t36">
+    <h2><span class="num">36</span>From Three Accents to Twenty-Two Śruti: Bharata's Formalization</h2>
+    <p>
+    The Nāṭyaśāstra's gāndharva chapters (adhyāyas 28 through 33 in the standard recension) perform the
+    specific historical work of taking the physiologically grounded seven-svara system inherited from Śikṣā and
+    Samagāna and embedding it within a considerably finer-grained microtonal framework: the twenty-two <span
+    class="term">śruti</span> division of the octave discussed in this document's companion volume, with each
+    of the seven svara assigned a specific consecutive-śruti count (traditionally 4-3-2-4-4-3-2 across
+    ṣaḍja through niṣāda) rather than treated as seven equally-spaced points. Bharata's formalization is
+    historically significant for a reason beyond the microtonal precision itself: it is the point at which the
+    svara system, previously described mainly through the vertical nābhi-to-śiras production model and the
+    animal-cry naming convention, receives its first systematic acoustic measurement procedure, described in
+    the same chapters through the two-vīṇā comparative-tuning method — two identical stringed instruments
+    tuned in unison, one then progressively retuned by successive quarter-tone reductions on a fixed string
+    while the other retains the reference tuning, with the resulting audible difference between the two
+    instruments used to empirically demarcate individual śruti-intervals rather than assuming them as an
+    unverified theoretical postulate. This is the earliest systematic empirical procedure the tradition records
+    for verifying microtonal claims about svara-sthāna rather than relying on the animal-cry mnemonic or the
+    nābhi-śiras physiological model alone, and it marks the specific historical transition from svara treated
+    primarily as a feature of correct Vedic recitation and chant toward svara treated as an autonomous object of
+    systematic acoustic and musicological study in its own right, a transition presupposed by every later
+    development this Part traces.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t37">
+    <h2><span class="num">37</span>Notation Across the Centuries: Vedic Svara-Marks to Matanga's Brhaddeśī</h2>
+    <p>
+    The actual graphic notation used to record svara across this history undergoes its own distinct evolution,
+    separate from but running parallel to the conceptual evolution traced in the preceding sections. Vedic
+    manuscripts mark udātta, anudātta, and svarita through a small, closed set of diacritic marks placed above
+    or below the akṣara being accented — a vertical stroke above the syllable for svarita in one common
+    convention, a horizontal or subscript stroke for anudātta, udātta frequently left unmarked as the default —
+    a notation adequate to the three-tone accentual system but not designed to record seven or twenty-two
+    finer distinctions. Bharata's own gāndharva chapters, by contrast, do not use a comparable graphic notation
+    at all; the twenty-two-śruti system is transmitted through the two-vīṇā verification procedure and through
+    oral pedagogy rather than through any surviving graphic svara-script contemporary with the Nāṭyaśāstra
+    itself, which is itself informative: the tradition's most microtonally precise historical claim (the
+    twenty-two-śruti division) belongs to the period with the least developed graphic notation, meaning the
+    precision was sustained through the two-vīṇā method and guru-śiṣya transmission specifically, not through
+    any notational record a later reader could independently verify against.
+    </p>
+    <p>
+    Matanga's Bṛhaddeśī (circa seventh to ninth century, the exact dating contested) marks the next major
+    stage, and is historically significant for introducing the term <span class="term">rāga</span> itself into
+    systematic musicological use, defined there as a specific, named combination of svara and varṇa (melodic
+    movement-pattern) capable of delighting the minds of listeners — the historical bridge document,
+    discussed in this document's companion volume, between the older jāti-mūrcchanā system and the fully
+    developed rāga system Sāraṅgadeva later systematizes. Matanga's text also expands the notational
+    vocabulary used to describe melodic movement itself, distinguishing sthāyī (a note sustained without
+    movement), āroha and avaroha (ascending and descending movement), and sañcāra (characteristic wandering
+    movement patterns specific to a given rāga) — a vocabulary of melodic motion-description that supplies the
+    specific conceptual apparatus the following section's transfer into bodily movement-notation depends on,
+    since a term such as sthāyī, describing a note held motionless at a fixed pitch-point, is structurally the
+    direct musical analogue of sthāna, a bodily position held motionless at a fixed spatial point, in the
+    karaṇa system discussed later in this Part.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t38">
+    <h2><span class="num">38</span>Sāraṅgadeva's Systematization and the Sixteen Svarasthāna Names</h2>
+    <p>
+    Sāraṅgadeva's Saṅgīta Ratnākara (thirteenth century) performs the final major pre-modern act of
+    systematization this Part traces, consolidating the twenty-two-śruti framework, Matanga's rāga concept, and
+    the jāti-mūrcchanā material discussed in this document's companion volume into a single comprehensive
+    treatise that both historical strands, Hindustani and Carnatic, trace their subsequent theoretical
+    development back to. Of direct relevance to notational evolution specifically, the Ratnākara's treatment
+    of svara-sthāna variation — the recognition that a single svara-name (ṛṣabha, gāndhāra, dhaivata, niṣāda)
+    can occupy more than one distinct śruti-position depending on the specific rāga or jāti being rendered —
+    supplies the direct historical ancestor of the later Carnatic system's sixteen named svarasthāna
+    positions (śuddha ṛṣabha, catuḥśruti ṛṣabha, ṣaṭśruti ṛṣabha; śuddha gāndhāra, sādhāraṇa gāndhāra,
+    antara gāndhāra; śuddha madhyama, prati madhyama; pañcama fixed and invariant; śuddha dhaivata, catuḥśruti
+    dhaivata, ṣaṭśruti dhaivata; śuddha niṣāda, kaiśikī niṣāda, kākalī niṣāda), each name specifying not only
+    which of the seven svara-functions is being rendered but exactly which of several possible śruti-positions
+    within that function is intended — a notational precision considerably finer than the seven-letter
+    sa-ri-ga-ma-pa-dha-ni system alone can express, and one that could only be reached once Bharata's twenty-
+    two-śruti division, Matanga's rāga-vocabulary, and Sāraṅgadeva's own systematic cataloguing of jāti-to-rāga
+    transition had each, in turn, already been established.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t39">
+    <h2><span class="num">39</span>Veṅkaṭamakhin's Melakartā System: The Final Reduction to Seventy-Two</h2>
+    <p>
+    Veṅkaṭamakhin's Caturdaṇḍiprakāśikā (seventeenth century) supplies Carnatic music's final and still-
+    current systematization, reducing the entire accumulated history traced through this Part — three Vedic
+    accents, seven sāman tones, seven named gāndharva svaras, twenty-two śruti-positions, sixteen named
+    svarasthānas — into a single closed combinatorial system: seventy-two <span class="term">melakartā</span>
+    (parent scales), generated by systematically permuting the sixteen svarasthāna names across the four
+    variable svara-positions (ṛṣabha/gāndhāra treated as a linked pair of three positions each, and
+    dhaivata/niṣāda similarly linked, madhyama offered in two variants, pañcama and ṣaḍja held invariant),
+    such that every possible seven-note scale admissible under the system's own combinatorial rules receives
+    exactly one designated place in an exhaustive, non-overlapping catalogue, each melakartā further assigned a
+    mnemonic name (through the kaṭapayādi numerical-syllable code, a separate notational device converting
+    Sanskrit consonants into digits) that directly encodes the scale's own serial number within the
+    seventy-two-item list. This is structurally the identical combinatorial-design method the Māheśvara Sūtras
+    apply to the phoneme inventory and Piṅgala's Chandaḥśāstra applies to metrical patterns, discussed at
+    length in this document's companion grammar and metrics volumes: a closed primitive inventory (here, the
+    sixteen svarasthāna names), combined under an explicit permutation rule, generating an exhaustively
+    enumerated and individually named output set — the same underlying design instinct, expressed a third
+    time, now applied to the space of possible seven-note scales rather than to phonemes or metrical feet, and
+    supplying the direct proof that the tradition's habitual combinatorial-cataloguing method, examined
+    throughout this document's treatment of Chandas and karaṇa, is not confined to grammar and metrics but is a
+    general methodological signature recurring across every domain the tradition subjects to systematic
+    formalization.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t40">
+    <h2><span class="num">40</span>The Transfer of Sthāna: From Svara-Sthāna to Bodily Sthāna</h2>
+    <p>
+    The specific technical term this Part's history has repeatedly used to name a svara's location —
+    <span class="term">sthāna</span> — is the identical technical term the Nāṭyaśāstra's āṅgika abhinaya
+    chapters use to name a fixed bodily stance or standing position, and the parallel is not treated by this
+    document as a loose or merely poetic resemblance between two unrelated technical vocabularies that happen
+    to share a word. A svara-sthāna, in every stage of the evolution traced above, names a fixed, nameable
+    point along a continuum (the nābhi-to-śiras vertical breath-path in the earliest physiological account, a
+    specific śruti-position within the twenty-two-fold octave in Bharata's formalization) that a trained
+    performer must be able to locate precisely and return to reliably on demand; a bodily sthāna, in the
+    identical technical sense, names a fixed, nameable point within the body's own possible configuration-space
+    (samapāda, vaiśākha, maṇḍala, and the remaining named standing positions the Nāṭyaśāstra catalogues) that a
+    trained dancer must likewise be able to locate precisely and return to reliably on demand. Both usages
+    depend on the same underlying conceptual move discussed in this document's companion grammar volume in
+    connection with pratyāhāra and chunking: a continuous space of possible variation (continuous pitch,
+    continuous bodily posture) is discretized into a closed, named inventory of stable reference points, each
+    reference point functioning as a stable unit a combinatorial system can subsequently be built from — svara-
+    sthāna feeding the rāga and melakartā systems traced above, bodily sthāna feeding the karaṇa system this
+    Part's closing section addresses directly. The tradition's own willingness to use one word, sthāna, across
+    both domains without troubling to coin a separate term for the bodily case is itself evidence that the
+    architects of this material understood the two discretization projects, acoustic and kinetic, as one and
+    the same underlying method applied twice, rather than as two independently invented systems that happen to
+    share incidental vocabulary.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <section class="tabpanel" id="t41">
+    <h2><span class="num">41</span>Sthāna, Cārī, and Nṛtta-Hasta Combine: The 108 Karaṇas</h2>
+    <p>
+    The Nāṭyaśāstra's fourth adhyāya catalogues the specific combinatorial output this Part's entire history
+    has been building toward: one hundred and eight named <span class="term">karaṇa</span>, each a fixed,
+    reproducible unit of dance movement generated by combining one named bodily sthāna (standing position),
+    one named <span class="term">cārī</span> (leg-and-foot movement pattern, itself subdivided into
+    bhaumī, ground-based, and ākāśikī, aerial, categories), and one named <span class="term">nṛtta-hasta</span>
+    (a hand gesture used specifically for its rhythmic and decorative movement-quality rather than for
+    semantic denotation, distinguishing it from the meaning-bearing hastas used in abhinaya proper) into a
+    single, indivisible, named compound unit — structurally identical in design logic to a melakartā's
+    combination of named svarasthāna positions into a single named seven-note scale, and to a Sanskrit
+    compound's combination of named morphological elements into a single derivationally transparent word,
+    discussed at length in this document's companion grammar volume. Bharata explicitly links successive
+    karaṇas into larger named sequences (<span class="term">aṅgahāra</span>), each aṅgahāra built from a
+    specified ordered string of individual karaṇas exactly as a metrical vṛtta, discussed in this document's
+    companion Chandas material, is built from a specified ordered string of laghu-guru syllable-weights — the
+    same generative, rule-governed sequencing logic recurring a further time, now at the level of connected
+    dance-phrases rather than individual movement-units or individual syllables.
+    </p>
+    <p>
+    The historical claim this Part has been assembling section by section can now be stated directly: the 108
+    karaṇas are not an independently invented dance-vocabulary that happens to appear in the same treatise as
+    the gāndharva chapters on svara and śruti; they are the terminal application, to the domain of bodily
+    movement, of a single combinatorial-formalization method whose entire developmental history — three Vedic
+    accents differentiating into seven sāman tones, the Nāradīya Śikṣā's vertical nābhi-to-śiras production
+    model, Bharata's own twenty-two-śruti empirical measurement procedure, Matanga's motion-vocabulary,
+    Sāraṅgadeva's sixteen svarasthāna names, and Veṅkaṭamakhin's seventy-two melakartā reduction — this Part has
+    traced from its earliest Vedic root to its most refined classical elaboration. The seers and ācāryas
+    responsible for this material did not first perfect a science of sound and only subsequently, and
+    separately, invent an unrelated science of movement; the karaṇa system's own explicit borrowing of the term
+    sthāna, its combinatorial design identical in structure to the melakartā system, and its sequencing into
+    aṅgahāra exactly as svara sequences into rāga-defining sañcāra, together indicate that a single sustained
+    intellectual tradition, having already discovered that continuous acoustic variation could be discretized,
+    named, verified, and recombined into an exhaustive and systematically generated catalogue, subsequently
+    recognized that the identical discretize-name-verify-recombine method applied equally well to continuous
+    bodily movement, and built the 108 karaṇas, and the temple sculptural programs at Cidambaram's
+    Naṭarāja temple and the Bṛhadīśvara temple at Tañjāvūr that later preserve them in stone, as that method's
+    direct and deliberate extension from the ear to the eye.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <div class="partdivider"><span class="plabel">Part IX — Closing</span><h2 class="partname">Synthesis</h2></div>
+
+  <section class="tabpanel" id="t42">
+    <h2><span class="num">42</span>Synthesis: One System, Three Names, Six Working Applications</h2>
+    <p>
+    Rasautpatti, kāvyotpatti, and nāṭyotpatti are, on the account this document has traced, three names for
+    stages of a single continuous problem and its solution, not three independent theories that happen to share
+    vocabulary. The problem, stated in Part I, is why a witnessed particular emotional event reliably produces
+    a shared, pleasurable, self-limiting experience in a heterogeneous audience rather than an idiosyncratic
+    private reaction varying by biography. Kāvyotpatti's krauñca-vadha account answers the question of origin —
+    where the crystallization from raw emotion into shareable form first occurs, in a mind already saturated
+    in metrical and grammatical structure. Nāṭyotpatti's fifth-Veda account answers the question of delivery —
+    why that crystallized form must be engineered to reach every social stratum without exception, rather than
+    only those already possessing the composer's own formal literacy. And the four-school history traced in
+    Part II — Lollaṭa's transmitted emotion, Śaṅkuka's inferred resemblance, Nāyaka's generalized relishing,
+    Abhinavagupta's suggested camatkāra — answers the mechanical question of how the crystallized, delivered
+    form actually produces its shared effect once it reaches an audience, arriving at sādhāraṇīkaraṇa via
+    vyañjanā as the specific, tested mechanism.
+    </p>
+    <p>
+    The kāvya-form lineage traced in Part IV — mahākāvya's full narrative apparatus progressively compressed
+    through khaṇḍakāvya and muktaka, stotra's direct address grafted onto that compression, the padam's
+    nāyaka-nāyikā redeployment of śṛṅgāra's technical machinery toward bhakti, and the kṛti's final integration
+    of pāṭhya-gīta-abhinaya-rasa into one small, individually performable unit — is the specific historical
+    process by which nāṭyotpatti's sarvavarṇika delivery-mandate and kāvyotpatti's crystallization-mechanism
+    were finally married into a form requiring neither a royal court's patronage for a multi-canto epic nor a
+    full dramatic troupe's staged production to reach a listener, but only a single voice and a few minutes.
+    The six composers examined in Part V are not six unrelated case studies appended to a completed theory, but
+    six demonstrations that the theory's full apparatus — the navarasa table, the ālambana/uddīpana
+    distinction, the sāttvika/vyabhicāri machinery, sādhāraṇīkaraṇa, and dhvani's suggestive redirection of
+    literal imagery toward doctrinal content — remained a live, working compositional toolkit many centuries
+    after Bharata and Abhinavagupta, deployed with full technical command by composers who inherited it not as
+    antiquarian theory but as the working grammar of how to make devotion itself, in Nāṭyaśāstra's own founding
+    phrase, sarvavarṇika: reaching every listener, regardless of birth, training, or private biography, through
+    what can be heard and felt.
+    </p>
+    <a class="backtotop" href="#top">↑ back to contents</a>
+  </section>
+
+  <div class="bib" id="bib">
+    <h2>Working Bibliography</h2>
+    <ol>
+      <li><span class="primary">Nāṭyaśāstra</span>, attributed to Bharata Muni, with the Abhinavabhāratī commentary of Abhinavagupta.</li>
+      <li><span class="primary">Rāmāyaṇa</span> (Bāla Kāṇḍa), attributed to Vālmīki.</li>
+      <li><span class="primary">Dhvanyāloka</span>, Ānandavardhana, with the Locana of Abhinavagupta.</li>
+      <li><span class="primary">Kāvyādarśa</span>, Daṇḍin.</li>
+      <li>Fragments and testimonia of Bhaṭṭa Lollaṭa, Śrī Śaṅkuka, and Bhaṭṭa Nāyaka, preserved chiefly in Abhinavagupta's Abhinavabhāratī and Locana.</li>
+      <li><span class="primary">Saundaryalaharī</span>, <span class="primary">Nirvāṇa Ṣaṭkam</span>, <span class="primary">Bhaja Govindam</span>, attributed to Śaṅkarācārya.</li>
+      <li>Surviving kṛti, padam, and kīrtana corpora of Muttusvāmi Dīkṣitar, Tyāgarāja, Śyāmā Śāstri, Annamācārya, and Bhadrācala Rāmadāsu, as preserved in standard Carnatic notational compilations and oral paramparā.</li>
+      <li>Kāmākṣī Kamalāmbā Navāvaraṇa kṛtis of Muttusvāmi Dīkṣitar, read alongside Śrīvidyā cakra-doctrine.</li>
+      <li>Gauḍīya Vaiṣṇava bhakti-rasa systematization (Rūpa Gosvāmī, Bhaktirasāmṛtasindhu), for the vātsalya and sākhya extensions to the navarasa table.</li>
+      <li><span class="primary">Śṛṅgāraprakāśa</span> and <span class="primary">Sarasvatīkaṇṭhābharaṇa</span>, Bhoja Rāja of Dhārā.</li>
+      <li><span class="primary">Vakroktijīvita</span>, Kuntaka.</li>
+      <li><span class="primary">Rasagaṅgādhara</span>, Jagannātha Paṇḍita.</li>
+      <li><span class="primary">Sāhityadarpaṇa</span>, Viśvanātha Kavirāja, for aṅgāṅgibhāva.</li>
+      <li><span class="primary">Aucityavicāracarcā</span>, Kṣemendra.</li>
+      <li>Sāṃkhyakārikā, Īśvarakṛṣṇa, for the guṇa-traya (sattva-rajas-tamas) underlying the sāttvika bhāva classification.</li>
+    </ol>
+  </div>
+
+  <footer class="endnote">
+    <span class="devq">रसो वै सः</span>
+    <p>Standalone monograph — companion to the Nāda, Vāk, Śāstra series — working draft</p>
+  </footer>
+</div>
+</body>
+</html>
